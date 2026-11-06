@@ -7,25 +7,25 @@ const work = db.getSiblingDB('student_work');
 
 // ----- Lab -----
 
-// Lab 1: Group districts by `province_pcode`, count them and sort by code. Then write a SQL query with `GROUP BY … ORDER BY … LIMIT` and translate it into a pipeline with `$group`, `$sort` and `$limit`. Compare the outputs.
+// Lab 1: Count districts per `province_pcode`, sorted by code. Translate a SQL `GROUP BY … ORDER BY … LIMIT` into `$group`, `$sort`, `$limit` and compare.
 // TODO
 
-// Lab 2: Use `$lookup` to show each district with its province name.
+// Lab 2: Show each district with its province name (`$lookup`).
 // TODO
 
-// Lab 3: Use `$lookup` to attach districts to provinces, then `$unwind` them. Compare the number of documents with the row count of the same SQL join.
+// Lab 3: Attach districts to provinces, `$unwind`, and compare the count with the SQL join.
 // TODO
 
-// Lab 4: Use `$project` to remove `_id`, and compare the values with a SQL result.
+// Lab 4: Remove `_id` with `$project`; compare values with SQL.
 // TODO
 
-// Lab 5: Design an embedded model (provinces with their districts) built only from the existing data. Explain how you would keep it up to date, how it would grow and what an update would cost.
+// Lab 5: Design an embedded province-with-districts model from the existing data. How do you keep it updated? How does it grow?
 // TODO
 
 // ----- Homework -----
 
-// Homework 1: Write three pipelines that together use $match, $group, $project, $lookup and $unwind.
+// Homework 1: Write three pipelines using $match, $group, $project, $lookup and $unwind.
 // TODO
 
-// Homework 2: For two queries in your project, explain whether you would embed or reference, and why.
+// Homework 2: For two project queries: embed or reference? Why?
 // TODO

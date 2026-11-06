@@ -1,42 +1,30 @@
 # FESE304 Database Management System
 
-Course materials for FESE304 at CamTech University. Each week has a short lesson, a worked example, lab tasks, homework and a capstone sprint. You practise with MySQL, MongoDB and Redis on your own computer, using real data about Cambodia's provinces, districts and communes.
+Weekly lessons, labs and homework for FESE304 at CamTech University, using MySQL, MongoDB and Redis with real Cambodian administrative data.
 
-Start with the [course guide](COURSE.md). Your instructor will confirm dates, deadlines and how to submit.
+## Get your copy
 
-## Get your own copy
-
-Keep your work in your own **private** repository, and do not push to this one.
+Create an empty **private** repository on GitHub, then (replace the `<...>` parts):
 
 ```bash
 git clone https://github.com/sereyvathanatum/dbms-course-materials.git fese304
 cd fese304
 git remote rename origin upstream
-```
-
-Create an empty private repository on GitHub, then connect it and push:
-
-```bash
-git remote add origin https://github.com/<your-username>/<your-repo>.git
+git remote add origin https://github.com/<your-username>/<your-private-repo>.git
 git push -u origin main
 ```
 
-When new material is released, commit your own work first, then run:
+Get new material: commit your work, then `git pull --no-rebase upstream main` and `git push`.
 
-```bash
-git pull --no-rebase upstream main
-git push
-```
+Only edit your files: `work.*`, `reflection.md`, `results/`, `schema.dbml` (Week 7), `app/` (Week 11) and `capstone/`.
 
-Your files are `work.*`, `reflection.md` and `results/` in each week, Week 7's `schema.dbml`, Week 11's `app/` folder and `capstone/`. Leave the other files as they are, so updates merge without conflicts. If Git reports a conflict, open the file, keep the lines you want, delete the `<<<<<<<`, `=======` and `>>>>>>>` lines, then `git add` the file and `git commit`.
+## Start
 
-## Getting started
+1. [Set up the databases](setup/README.md)
+2. [Read about the data](data/README.md)
+3. [Start Week 1](weeks/week-01/README.md)
 
-1. Install the tools and start the databases: [setup/README.md](setup/README.md).
-2. Read about the data: [data/README.md](data/README.md).
-3. Open [Week 1](weeks/week-01/README.md).
-
-Run all commands from the top folder of the repository (the one that contains `compose.yaml`).
+Run commands from the repository's top folder.
 
 ## Weeks
 
@@ -58,18 +46,8 @@ Run all commands from the top folder of the repository (the one that contains `c
 | 14 | Redis caching and choosing a database | [README](weeks/week-14/README.md) · [PDF](weeks/week-14/README.pdf) |
 | 15 | Capstone presentation and handover | [README](weeks/week-15/README.md) · [PDF](weeks/week-15/README.pdf) |
 
-Each week folder contains:
+Each week: `README.md` (guide), `README.pdf` (print), `work.*` (your answers), `reflection.md`, `results/` (your output). Weeks 1–13 also have `example.*` (worked example).
 
-| File | Purpose |
-|---|---|
-| `README.md` / `README.pdf` | The weekly guide (the PDF is for offline reading or printing) |
-| `example.sql` or `example.js` | The worked example |
-| `work.sql`, `work.js` or `work.md` | Your answers |
-| `reflection.md` | Your short reflection |
-| `results/` | Your saved query output |
+Also: [course guide](COURSE.md) · [submitting](SUBMISSIONS.md) · [apps](apps/README.md) · [capstone](capstone/README.md) · [references](REFERENCES.md)
 
-Other folders: `setup/` (databases), `data/` (the dataset), `apps/` (Python and Node.js examples) and `capstone/` (team project templates). See also [SUBMISSIONS.md](SUBMISSIONS.md) and [REFERENCES.md](REFERENCES.md).
-
-## Data
-
-The data is the Cambodia administrative boundaries dataset from OCHA's Humanitarian Data Exchange, produced by the Department of Geography of Cambodia, under the CC BY-IGO licence. See [data/README.md](data/README.md) for details and attribution.
+Data: [OCHA HDX, Cambodia administrative boundaries](https://data.humdata.org/dataset/cod-ab-khm), CC BY-IGO.

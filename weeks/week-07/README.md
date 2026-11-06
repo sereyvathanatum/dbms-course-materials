@@ -6,23 +6,22 @@
 
 ## Lesson
 
-Database design has three steps: **conceptual** (which things and relationships exist), **logical** (tables, columns and keys) and **physical** (data types, indexes and storage in one DBMS).
-
-An **entity** is a kind of thing, such as a province. An **attribute** describes it, such as its name. A **relationship** links entities: a province contains districts. **Cardinality** says how many (1:1, 1:N or M:N), and **participation** says whether the link is required (every district must belong to a province).
-
-To turn an ERD into tables, put the foreign key on the "many" side of a 1:N relationship. An M:N relationship needs a junction table. A **weak entity** depends on its owner for its identity, and **specialization** splits an entity into subtypes. This dataset only has 1:N relationships, so explain the other cases with your own examples on paper.
-
-You will draw the ERD in DBML, which [dbdiagram.io](https://dbdiagram.io) can display as a diagram.
+- Design steps: **conceptual** (things and links) → **logical** (tables, keys) → **physical** (types, indexes, one DBMS).
+- **Entity** = thing (province). **Attribute** = property (name). **Relationship** = link (province has districts).
+- **Cardinality:** 1:1, 1:N, M:N. **Participation:** is the link required?
+- 1:N → FK on the "many" side. M:N → junction table.
+- **Weak entity:** identified through its owner. **Specialization:** subtypes of an entity. Our data has only 1:N, so show the others on paper.
+- Draw the ERD in DBML and view it on [dbdiagram.io](https://dbdiagram.io).
 
 ## Worked example
 
-Run `example.sql` (see [Run a SQL file](../../setup/README.md#run-a-sql-file)) and read the output. Then complete `schema.dbml` and `work.sql`.
+Run `example.sql` ([how](../../setup/README.md#run-a-sql-file)), then answer in `schema.dbml` and `work.sql`.
 
 <!-- tables:start -->
 
 ## Tables for this week
 
-Read from the `cambodia` database and make your changes in `student_work`. PK means primary key and FK means foreign key. Every column is `NOT NULL`. The sample rows are the first two rows of each table, sorted by code.
+Read `cambodia`, write `student_work`. All columns are `NOT NULL`. Samples are the first two rows by code.
 
 ### `cambodia.province`
 
@@ -71,29 +70,29 @@ Sample rows:
 | KH010201 | Banteay Neang | 52.0 | KH0102 |
 | KH010202 | Bat Trang | 40.3 | KH0102 |
 
-**Join keys:** `district.province_pcode = province.province_pcode`; `commune.district_pcode = district.district_pcode`. Join on the codes, not the names.
+**Join keys:** `district.province_pcode = province.province_pcode`; `commune.district_pcode = district.district_pcode`.
 
-Run `DESCRIBE cambodia.province;` to see a table definition in MySQL. The [data guide](../../data/README.md) explains where the data comes from.
+More: [data guide](../../data/README.md).
 
 <!-- tables:end -->
 
 ## Lab tasks
 
-1. Complete `schema.dbml` with the three tables, their columns, primary keys and foreign keys.
-2. Mark each relationship as one-to-many, and show that every child must have a parent.
-3. Use SQL to check that every district and every commune has a parent.
-4. Check whether every province and every district has at least one child. Explain the difference between what the data shows today and what the schema allows.
-5. Write CREATE TABLE statements in `student_work` from your ERD, using the same data types as the source tables.
+1. Complete `schema.dbml`: three tables, columns, PKs and FKs.
+2. Mark each relationship 1:N and show that every child needs a parent.
+3. Check with SQL that every district and commune has a parent.
+4. Check whether every province and district has a child. Data today vs what the schema allows?
+5. Write CREATE TABLE statements in `student_work` from your ERD, with the source data types.
 
 ## Homework
 
-1. Explain natural keys and surrogate keys, using P-codes and MongoDB's `_id` as examples.
-2. Describe the conceptual, logical and physical design steps for this dataset. Then explain, with your own examples on paper, an M:N junction table, a weak entity and specialization.
+1. Explain natural vs surrogate keys using P-codes and MongoDB `_id`.
+2. Describe conceptual, logical and physical design for this data. Sketch an M:N junction, a weak entity and a specialization on paper.
 
 ## Capstone sprint
 
-**C7:** Submit ERD v1 and a data dictionary. Explain why you chose each key and relationship.
+**C7:** Submit ERD v1 and a data dictionary; justify keys and relationships.
 
 ## Submit
 
-Write your answers in `work.sql` and label each one, for example `-- Lab 3`. Answer the questions in `reflection.md` and save your query output in `results/`. Then commit and push to your repository. See [SUBMISSIONS.md](../../SUBMISSIONS.md) for details.
+Answers in `work.sql`, reflection in `reflection.md`, output in `results/`. Commit and push. See [SUBMISSIONS.md](../../SUBMISSIONS.md).

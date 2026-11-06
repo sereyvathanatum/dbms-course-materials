@@ -6,19 +6,19 @@
 
 ## Lesson
 
-This week is the midterm, which covers Weeks 1–8. Your instructor will give you the time, the rules and the allowed materials. The tasks below are practice only; they are not the exam.
-
-Try each task on your own first, then check your notes. For every query, be ready to explain what one row means, which keys you joined on, how you filtered and how you sorted. For design questions, write the dependencies and explain which rules the schema enforces.
+- The midterm covers Weeks 1–8. Your instructor gives the time, rules and allowed materials.
+- These tasks are practice, not the exam. Try them without notes first.
+- For each query, know: what one row means, the join keys, the filter and the sort.
 
 ## Worked example
 
-Run `example.sql` (see [Run a SQL file](../../setup/README.md#run-a-sql-file)) and read the output. Then open `work.sql`.
+Run `example.sql` ([how](../../setup/README.md#run-a-sql-file)), then answer in `work.sql`.
 
 <!-- tables:start -->
 
 ## Tables for this week
 
-Read from the `cambodia` database and make your changes in `student_work`. PK means primary key and FK means foreign key. Every column is `NOT NULL`. The sample rows are the first two rows of each table, sorted by code.
+Read `cambodia`, write `student_work`. All columns are `NOT NULL`. Samples are the first two rows by code.
 
 ### `cambodia.province`
 
@@ -67,31 +67,31 @@ Sample rows:
 | KH010201 | Banteay Neang | 52.0 | KH0102 |
 | KH010202 | Bat Trang | 40.3 | KH0102 |
 
-**Join keys:** `district.province_pcode = province.province_pcode`; `commune.district_pcode = district.district_pcode`. Join on the codes, not the names.
+**Join keys:** `district.province_pcode = province.province_pcode`; `commune.district_pcode = district.district_pcode`.
 
-**Metadata used by `example.sql`:** `information_schema.COLUMNS` lists every column of every table. The example keeps only `TABLE_SCHEMA = 'cambodia'` and shows `TABLE_NAME`, `COLUMN_NAME`, `COLUMN_TYPE`, `IS_NULLABLE` and `COLUMN_KEY`.
+**`example.sql`** lists the `cambodia` columns from `information_schema.COLUMNS`.
 
-Run `DESCRIBE cambodia.province;` to see a table definition in MySQL. The [data guide](../../data/README.md) explains where the data comes from.
+More: [data guide](../../data/README.md).
 
 <!-- tables:end -->
 
 ## Lab tasks
 
-1. Without looking at earlier answers, list province names and areas, sorted by area and then by code.
-2. Count the districts in each province, keeping provinces that have no districts.
-3. Find the districts larger than the average district in their own province.
-4. Draw the ERD of the three tables and explain the primary and foreign keys.
-5. Explain how to normalize the Week 8 report. Then delete one row from your own copy of a table inside a transaction and roll it back.
+1. List province names and areas by area, then code.
+2. Count districts per province, keeping provinces with none.
+3. Find districts larger than their province's average district.
+4. Draw the three-table ERD; explain PKs and FKs.
+5. Explain how to normalize the Week 8 report. Create `student_work.w09_province` from `cambodia.province`, delete one row in a transaction, then roll back.
 
 ## Homework
 
-1. After you get feedback, write your mistakes and the corrected queries in `reflection.md`.
-2. Make a one-page study sheet based on the exam rules your instructor gives you.
+1. After feedback, write your mistakes and corrected queries in `reflection.md`.
+2. Make a one-page study sheet.
 
 ## Capstone sprint
 
-No new sprint this week. Keep your Checkpoint 2 version committed and list your next project tasks in priority order.
+No sprint. Keep Checkpoint 2 committed and list your next tasks by priority.
 
 ## Submit
 
-Write your answers in `work.sql` and label each one, for example `-- Lab 3`. Answer the questions in `reflection.md` and save your query output in `results/`. Then commit and push to your repository. See [SUBMISSIONS.md](../../SUBMISSIONS.md) for details.
+Answers in `work.sql`, reflection in `reflection.md`, output in `results/`. Commit and push. See [SUBMISSIONS.md](../../SUBMISSIONS.md).

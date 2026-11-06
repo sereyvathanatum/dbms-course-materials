@@ -4,42 +4,42 @@ For each item, link the capstone files that show it.
 
 ## Lab 1
 
-Ask a teammate to set up your project from a fresh clone, using only your README.
+Have a teammate set up the project from a fresh clone using only your README.
 
 TODO
 
 ## Lab 2
 
-Show your ERD, normalized schema, import script and data source.
+Show ERD, schema, import script and data source.
 
 TODO
 
 ## Lab 3
 
-Demonstrate your SQL reports, database objects and a parameterized query in your app.
+Demo SQL reports, database objects and a parameterized app query.
 
 TODO
 
 ## Lab 4
 
-Demonstrate your MongoDB pipelines and a Redis cache miss and hit.
+Demo MongoDB pipelines and a Redis miss and hit.
 
 TODO
 
 ## Lab 5
 
-Submit the report, demo outline, contribution log and output files, and answer your instructor's questions.
+Submit report, demo outline, contribution log and output; answer questions.
 
 TODO
 
 ## Homework 1
 
-Write an individual reflection: what you built and what you would improve.
+Individual reflection: what you built and what you'd improve.
 
 TODO
 
 ## Homework 2
 
-Follow your instructor's instructions for the final submission and the private peer evaluation.
+Final submission and private peer evaluation, as your instructor directs.
 
 TODO

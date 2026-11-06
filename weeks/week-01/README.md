@@ -6,21 +6,21 @@
 
 ## Lesson
 
-A **database** is an organised collection of related data. A **DBMS** (database management system), such as MySQL, is the software that stores the data and lets people read and change it safely. Unlike a spreadsheet, a DBMS checks rules on the data, lets many users work at the same time without overwriting each other, and answers questions with a query language (SQL). In a relational database, data is kept in **tables**. Each table has named **columns**, and each **row** is one record. A **primary key** is a column whose value identifies exactly one row.
-
-This course uses real data about Cambodia's 25 provinces, 197 districts and 1,633 communes. Each one has a code (called a P-code, for example `KH12`), an English name and an area in km². The boundaries are from 2018, so some may differ from today's.
-
-`SELECT` chooses the columns, `FROM` chooses the table and `ORDER BY` sorts the rows. Without `ORDER BY`, MySQL may return rows in any order. `LIMIT 5` returns only the first five rows of the result, and `OFFSET` skips rows before them. If two rows can have the same value in the sort column, add the code as a second sort column so the order is always the same.
+- **Database:** organised, related data. **DBMS** (e.g. MySQL): software that stores it, enforces rules, handles many users at once and answers SQL queries.
+- **Table** = columns + rows. **Primary key** = column that identifies one row.
+- Data: Cambodia's 25 provinces, 197 districts and 1,633 communes (2018 boundaries). Each has a code (P-code, e.g. `KH12`), a name and an area in km².
+- `SELECT` columns, `FROM` table, `ORDER BY` sort. No `ORDER BY` = no guaranteed order.
+- `LIMIT n` keeps n rows; `OFFSET n` skips n rows first. Add the code as the last sort column so the order is stable.
 
 ## Worked example
 
-Run `example.sql` (see [Run a SQL file](../../setup/README.md#run-a-sql-file)) and read the output. Then open `work.sql`.
+Run `example.sql` ([how](../../setup/README.md#run-a-sql-file)), then answer in `work.sql`.
 
 <!-- tables:start -->
 
 ## Tables for this week
 
-Read from the `cambodia` database and make your changes in `student_work`. PK means primary key and FK means foreign key. Every column is `NOT NULL`. The sample rows are the first two rows of each table, sorted by code.
+Read `cambodia`, write `student_work`. All columns are `NOT NULL`. Samples are the first two rows by code.
 
 ### `cambodia.province`
 
@@ -69,30 +69,30 @@ Sample rows:
 | KH010201 | Banteay Neang | 52.0 | KH0102 |
 | KH010202 | Bat Trang | 40.3 | KH0102 |
 
-**Join keys:** `district.province_pcode = province.province_pcode`; `commune.district_pcode = district.district_pcode`. Join on the codes, not the names.
+**Join keys:** `district.province_pcode = province.province_pcode`; `commune.district_pcode = district.district_pcode`.
 
-Run `DESCRIBE cambodia.province;` to see a table definition in MySQL. The [data guide](../../data/README.md) explains where the data comes from.
+More: [data guide](../../data/README.md).
 
 <!-- tables:end -->
 
 ## Lab tasks
 
-1. Connect to MySQL and run `SELECT VERSION();`. In one or two sentences, explain the difference between the client, the server and a database.
-2. Run `SHOW TABLES;` and `DESCRIBE` each of the three tables. Write down the primary key of each table.
+1. Run `SELECT VERSION();`. Explain client, server and database in two sentences.
+2. Run `SHOW TABLES;` and `DESCRIBE` each table. Name each primary key.
 3. List all province codes and names, sorted by code.
-4. List the five provinces with the largest area. Sort by area (largest first), then by code.
-5. Count the rows in each of the three tables. Compare the numbers with the CSV files in `data/` (each file also has one header line).
+4. List the five largest provinces by area (then by code).
+5. Count the rows in each table and compare with the CSV files in `data/`.
 
 ## Homework
 
-1. Write five more SELECT queries. Name the columns you want (do not use `*`) and always use ORDER BY.
-2. Using one of your results, explain the difference between data and information.
-3. Show the provinces in code order, two rows at a time, with `LIMIT 2 OFFSET ...`. Explain what OFFSET counts and why paging needs ORDER BY.
+1. Write five SELECT queries with named columns (no `*`) and ORDER BY.
+2. Use one result to explain data vs information.
+3. Page through provinces two at a time with `LIMIT 2 OFFSET ...`. Why does paging need ORDER BY?
 
 ## Capstone sprint
 
-**C1:** Form your team (3–4 students) and choose a problem that public data can answer. Write eight questions your database should answer, and note where the data will come from (publisher, link and licence). You may use the Cambodia data from this course.
+**C1:** Form a team of 3–4, pick a problem, write eight questions and name your data source (publisher, link, licence).
 
 ## Submit
 
-Write your answers in `work.sql` and label each one, for example `-- Lab 3`. Answer the questions in `reflection.md` and save your query output in `results/`. Then commit and push to your repository. See [SUBMISSIONS.md](../../SUBMISSIONS.md) for details.
+Answers in `work.sql`, reflection in `reflection.md`, output in `results/`. Commit and push. See [SUBMISSIONS.md](../../SUBMISSIONS.md).

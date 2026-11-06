@@ -2,27 +2,29 @@
 -- Read from cambodia. Create and change tables only in student_work.
 -- Save the output of each task in results/.
 
+USE cambodia;  -- for your own tables, write student_work.table_name
+
 -- ----- Lab -----
 
--- Lab 1: Find the provinces larger than the average province area, using a scalar subquery.
+-- Lab 1: Find provinces above the average province area (scalar subquery).
 -- TODO
 
--- Lab 2: Return the provinces that have at least one district, first with IN and a subquery, then with EXISTS. Compare the two outputs.
+-- Lab 2: Find provinces with at least one district, first with IN, then with EXISTS. Compare.
 -- TODO
 
--- Lab 3: Write a correlated subquery that finds the districts larger than the average district in their own province.
+-- Lab 3: Find districts larger than their own province's average district (correlated).
 -- TODO
 
--- Lab 4: Use a CTE to count districts per province, then keep the provinces whose count is above the average count.
+-- Lab 4: With a CTE, count districts per province and keep counts above the average count.
 -- TODO
 
--- Lab 5: Rewrite task 4 with a derived table instead of a CTE and compare the two outputs.
+-- Lab 5: Rewrite task 4 with a derived table and compare.
 -- TODO
 
 -- ----- Homework -----
 
--- Homework 1: Answer one question with a JOIN and again with EXISTS. Explain when the JOIN can return duplicate rows.
+-- Homework 1: Answer one question with JOIN and with EXISTS. When does JOIN duplicate rows?
 -- TODO
 
--- Homework 2: Review a classmate's schema and write two useful suggestions.
+-- Homework 2: Review a classmate's schema: two suggestions.
 -- TODO

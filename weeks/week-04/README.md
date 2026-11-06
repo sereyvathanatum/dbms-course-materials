@@ -6,21 +6,21 @@
 
 ## Lesson
 
-A **single-row function** works on each row: `UPPER(name)`, `CHAR_LENGTH(name)`, `ROUND(area_km2)`. An **aggregate function** turns many rows into one value: `COUNT`, `SUM`, `AVG`, `MIN` and `MAX`. `COUNT(*)` counts rows; `COUNT(column)` skips NULLs.
-
-`GROUP BY` makes one group for each value, and the aggregate is calculated for each group. `WHERE` filters rows before grouping; `HAVING` filters groups after grouping. `CASE` creates a label from a rule, and `COALESCE(x, y)` returns `y` when `x` is NULL.
-
-Keep two points in mind with this data. An average area is an average of administrative units, not of people. The dataset has no population and no dates; the only date is the boundary date, 4 October 2018.
+- **Single-row functions** work per row: `UPPER`, `CHAR_LENGTH`, `ROUND`.
+- **Aggregates** return one value: `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`. `COUNT(col)` skips NULLs.
+- `GROUP BY` = one result per group. `WHERE` filters rows before grouping; `HAVING` filters groups after.
+- `CASE` makes labels; `COALESCE(x, y)` returns y when x is NULL.
+- Average area is per unit, not per person. The only date in the data is 2018-10-04.
 
 ## Worked example
 
-Run `example.sql` (see [Run a SQL file](../../setup/README.md#run-a-sql-file)) and read the output. Then open `work.sql`.
+Run `example.sql` ([how](../../setup/README.md#run-a-sql-file)), then answer in `work.sql`.
 
 <!-- tables:start -->
 
 ## Tables for this week
 
-Read from the `cambodia` database and make your changes in `student_work`. PK means primary key and FK means foreign key. Every column is `NOT NULL`. The sample rows are the first two rows of each table, sorted by code.
+Read `cambodia`, write `student_work`. All columns are `NOT NULL`. Samples are the first two rows by code.
 
 ### `cambodia.province`
 
@@ -53,30 +53,30 @@ Sample rows:
 | KH0102 | Mongkol Borei | 807.2 | KH01 |
 | KH0103 | Phnum Srok | 761.7 | KH01 |
 
-**Join keys:** `district.province_pcode = province.province_pcode`. Join on the codes, not the names.
+**Join keys:** `district.province_pcode = province.province_pcode`.
 
-Run `DESCRIBE cambodia.province;` to see a table definition in MySQL. The [data guide](../../data/README.md) explains where the data comes from.
+More: [data guide](../../data/README.md).
 
 <!-- tables:end -->
 
 ## Lab tasks
 
-1. Show each province name next to its UPPER version and its CHAR_LENGTH.
-2. Find the MIN, MAX, SUM and AVG district area. State the unit (km²) and round the average to one decimal place.
-3. Group districts by `province_pcode` and show COUNT(*) and AVG(area_km2) for each province.
-4. Calculate the average number of districts per province (total districts ÷ number of provinces). Then use HAVING to keep only the provinces above that value.
-5. Use CASE to label each province as above or not above the average province area. Then use `YEAR('2018-10-04')` to show the year of the boundary data.
+1. Show each province name with its UPPER version and CHAR_LENGTH.
+2. Find MIN, MAX, SUM and AVG district area (km², AVG to one decimal).
+3. Group districts by `province_pcode`: COUNT(*) and AVG(area_km2).
+4. Work out the average districts per province (197 ÷ 25), then use HAVING to keep provinces above it.
+5. Label provinces above / not above the average area with CASE. Show `YEAR('2018-10-04')`.
 
 ## Homework
 
-1. Write three grouped reports. Use one of them to explain the difference between WHERE and HAVING.
-2. Add up the district areas of one province and compare the total with the province's own area. Explain why rounded values may not add up exactly, and why area tells you nothing about population.
-3. Use COALESCE in one query, for example after a LEFT JOIN, and explain which NULL it would replace. Say whether any NULL appeared in your result.
+1. Write three grouped reports; use one to explain WHERE vs HAVING.
+2. Sum one province's district areas and compare with its area. Why can they differ? Why can't area tell you population?
+3. Use COALESCE once (e.g. after a LEFT JOIN). Did any NULL appear?
 
 ## Capstone sprint
 
-**C4:** Write five report queries that answer your capstone questions. Save each query with its output.
+**C4:** Write five report queries for your capstone questions and save their output.
 
 ## Submit
 
-Write your answers in `work.sql` and label each one, for example `-- Lab 3`. Answer the questions in `reflection.md` and save your query output in `results/`. Then commit and push to your repository. See [SUBMISSIONS.md](../../SUBMISSIONS.md) for details.
+Answers in `work.sql`, reflection in `reflection.md`, output in `results/`. Commit and push. See [SUBMISSIONS.md](../../SUBMISSIONS.md).

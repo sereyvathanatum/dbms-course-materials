@@ -6,24 +6,21 @@
 
 ## Lesson
 
-Some questions need two steps: first calculate something, then use it. A **subquery** is a query inside another query.
-
-- A scalar subquery returns one value: `WHERE area_km2 > (SELECT AVG(area_km2) FROM province)`.
-- `IN (subquery)` checks whether a value is in the list the subquery returns.
-- `EXISTS (subquery)` checks whether at least one matching row exists. Unlike a join, it never repeats the outer rows.
-- A **correlated** subquery uses a value from the outer row, so it is evaluated for each outer row.
-
-A **derived table** is a subquery in the FROM clause, with a name. A **CTE** (`WITH name AS (...)`) does the same job but puts the first step at the top, which makes long queries easier to read. When you write the same question in two ways, compare the outputs to check that they match.
+- **Scalar subquery:** one value, e.g. `WHERE area_km2 > (SELECT AVG(area_km2) FROM province)`.
+- `IN (subquery)`: value is in the list. `EXISTS (subquery)`: at least one match; never repeats outer rows.
+- **Correlated subquery:** uses the outer row's values.
+- **Derived table:** named subquery in FROM. **CTE:** `WITH name AS (...)`, same idea, easier to read.
+- Two ways to write the same question? Compare their outputs.
 
 ## Worked example
 
-Run `example.sql` (see [Run a SQL file](../../setup/README.md#run-a-sql-file)) and read the output. Then open `work.sql`.
+Run `example.sql` ([how](../../setup/README.md#run-a-sql-file)), then answer in `work.sql`.
 
 <!-- tables:start -->
 
 ## Tables for this week
 
-Read from the `cambodia` database and make your changes in `student_work`. PK means primary key and FK means foreign key. Every column is `NOT NULL`. The sample rows are the first two rows of each table, sorted by code.
+Read `cambodia`, write `student_work`. All columns are `NOT NULL`. Samples are the first two rows by code.
 
 ### `cambodia.province`
 
@@ -56,29 +53,29 @@ Sample rows:
 | KH0102 | Mongkol Borei | 807.2 | KH01 |
 | KH0103 | Phnum Srok | 761.7 | KH01 |
 
-**Join keys:** `district.province_pcode = province.province_pcode`. Join on the codes, not the names.
+**Join keys:** `district.province_pcode = province.province_pcode`.
 
-Run `DESCRIBE cambodia.province;` to see a table definition in MySQL. The [data guide](../../data/README.md) explains where the data comes from.
+More: [data guide](../../data/README.md).
 
 <!-- tables:end -->
 
 ## Lab tasks
 
-1. Find the provinces larger than the average province area, using a scalar subquery.
-2. Return the provinces that have at least one district, first with IN and a subquery, then with EXISTS. Compare the two outputs.
-3. Write a correlated subquery that finds the districts larger than the average district in their own province.
-4. Use a CTE to count districts per province, then keep the provinces whose count is above the average count.
-5. Rewrite task 4 with a derived table instead of a CTE and compare the two outputs.
+1. Find provinces above the average province area (scalar subquery).
+2. Find provinces with at least one district, first with IN, then with EXISTS. Compare.
+3. Find districts larger than their own province's average district (correlated).
+4. With a CTE, count districts per province and keep counts above the average count.
+5. Rewrite task 4 with a derived table and compare.
 
 ## Homework
 
-1. Answer one question with a JOIN and again with EXISTS. Explain when the JOIN can return duplicate rows.
-2. Review a classmate's schema and write two useful suggestions.
+1. Answer one question with JOIN and with EXISTS. When does JOIN duplicate rows?
+2. Review a classmate's schema: two suggestions.
 
 ## Capstone sprint
 
-**C6:** Add two multi-step queries (subquery or CTE) to your project. Record the feedback you received on your schema and what you changed.
+**C6:** Add two multi-step queries. Record schema feedback and what you changed.
 
 ## Submit
 
-Write your answers in `work.sql` and label each one, for example `-- Lab 3`. Answer the questions in `reflection.md` and save your query output in `results/`. Then commit and push to your repository. See [SUBMISSIONS.md](../../SUBMISSIONS.md) for details.
+Answers in `work.sql`, reflection in `reflection.md`, output in `results/`. Commit and push. See [SUBMISSIONS.md](../../SUBMISSIONS.md).

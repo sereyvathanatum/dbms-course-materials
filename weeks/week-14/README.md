@@ -6,48 +6,47 @@
 
 ## Lesson
 
-Redis keeps its data in memory and looks values up by key, which makes it very fast. It supports strings, hashes, lists, sets and sorted sets. A **TTL** (time to live) makes a key expire after a number of seconds.
-
-In the **cache-aside** pattern, the app looks in the cache first. On a **miss**, it reads from the database, saves the result in the cache with a TTL and returns it. On a **hit**, it returns the cached value without touching the database. MySQL remains the main copy of the data. You also need a plan for when the data changes (delete or refresh the key) and for when Redis is down (read from MySQL instead).
-
-For your own Redis structures, use province codes as keys or members, names as values and `area_km2` as the score in a sorted set. The dataset has no users or sessions, so discuss session storage on paper only.
-
-Finally, choose the right database for each job: MySQL for related data with strict rules, MongoDB for flexible documents, Redis for fast temporary data, and a graph database when the links between items are the main question.
+- Redis keeps data in memory and looks it up by key: very fast. Types: string, hash, list, set, sorted set.
+- **TTL:** key expires after n seconds.
+- **Cache-aside:** check cache → **miss**: read MySQL, store with TTL, return → **hit**: return cached value. MySQL stays the main copy.
+- Plan for data changes (delete or refresh the key) and for Redis being down (read MySQL).
+- Use codes as keys, names as values, `area_km2` as sorted-set score. No users or sessions in this data.
+- Pick per job: MySQL (related data, rules), MongoDB (flexible documents), Redis (fast, temporary), graph DB (links are the question).
 
 ## Worked example
 
-Run the cache app from [apps/](../../apps/README.md) twice with the same province code and compare the two outputs. Then open `work.md`.
+Run the cache app in [apps/](../../apps/README.md) twice with the same code, then answer in `work.md`.
 
 <!-- tables:start -->
 
 ## The cache for this week
 
-**The cache app:** it stores a Redis string under the key `fese304:districts:<province_pcode>`, for example `fese304:districts:KH01`. The value is a JSON array of districts with `district_pcode` and `district_name`, read from MySQL. The key expires after 60 seconds.
+**Cache key:** `fese304:districts:<province_pcode>` (e.g. `fese304:districts:KH01`). Value: JSON array of `district_pcode`, `district_name`. TTL: 60 s.
 
-For the hash, list, set and sorted-set tasks, use your own keys starting with `fese304:lab14:`. Use province codes as identifiers, names as labels and `area_km2` as the sorted-set score.
+**Your keys (tasks 3–4):** create them yourself and start their names with `fese304:lab14:`.
 
-The tables and columns are described in the [data guide](../../data/README.md).
+Tables: [data guide](../../data/README.md).
 
 <!-- tables:end -->
 
 ## Lab tasks
 
-1. Run `apps/python/cache.py` or `apps/node/cache.mjs` twice with the same province code. Save the miss and then the hit.
-2. Use redis-cli to look at the stored JSON and its TTL. Wait until the key expires and run the app again to see a miss.
-3. Build a hash, a list and a set from fields in the province or district data.
-4. Build a sorted set of provinces scored by area and compare its order with the same ORDER BY in MySQL. Explain what Redis does when two scores are equal.
-5. Delete your cache key and check that the next run loads it again. Write a short policy for what to do when the data changes and when Redis is down.
+1. Run `cache.py` or `cache.mjs` twice with one code; save the miss and the hit.
+2. In redis-cli, view the JSON and TTL. Wait for expiry; run again for a miss.
+3. Build a hash, a list and a set from province or district fields.
+4. Build a sorted set of provinces by area; compare with MySQL ORDER BY. What does Redis do with equal scores?
+5. Delete the app's key from task 1 (`DEL fese304:districts:<code>`), run the app again and save the miss. Write a policy for data changes and Redis downtime.
 
 ## Homework
 
-1. Submit your Redis commands, their output, what you saw when the key expired, and your cache code.
-2. For each way your capstone uses data, choose MySQL, MongoDB or Redis and explain why (durability, relationships, validation and consistency).
-3. Explain why Redis is fast for key lookups, and describe one requirement where a graph database would fit better than MySQL, MongoDB or Redis.
+1. Submit Redis commands, output, expiry notes and cache code.
+2. For each capstone access pattern, choose MySQL, MongoDB or Redis and say why.
+3. Why is Redis fast? Give one case where a graph database fits better.
 
 ## Capstone sprint
 
-**C14 / Checkpoint 4:** Deliver your Redis feature and your NoSQL model, and rehearse the final demo.
+**C14 / Checkpoint 4:** Redis feature, NoSQL model and a demo rehearsal.
 
 ## Submit
 
-Write your answers in `work.md` and label each one, for example a heading such as `## Lab 3`. Answer the questions in `reflection.md` and save your query output in `results/`. Then commit and push to your repository. See [SUBMISSIONS.md](../../SUBMISSIONS.md) for details.
+Answers in `work.md`, reflection in `reflection.md`, output in `results/`. Commit and push. See [SUBMISSIONS.md](../../SUBMISSIONS.md).

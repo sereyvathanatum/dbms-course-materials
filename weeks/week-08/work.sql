@@ -2,27 +2,29 @@
 -- Read from cambodia. Create and change tables only in student_work.
 -- Save the output of each task in results/.
 
+USE cambodia;  -- for your own tables, write student_work.table_name
+
 -- ----- Lab -----
 
--- Lab 1: Run the joined report from `example.sql` and save its column list and output.
+-- Lab 1: Run the report in `example.sql`; save its columns and output.
 -- TODO
 
--- Lab 2: Write the functional dependencies and find a candidate key.
+-- Lab 2: Write the functional dependencies and a candidate key.
 -- TODO
 
--- Lab 3: Point to repeated province values in the report and use them to explain the update, insert and delete anomalies. Do not change the source tables.
+-- Lab 3: Use repeated province values to explain update, insert and delete anomalies. Don't change the source.
 -- TODO
 
--- Lab 4: Split the report into province, district and commune tables with their keys.
+-- Lab 4: Split the report into province, district and commune tables with keys.
 -- TODO
 
--- Lab 5: Join your three tables back together and compare the result with the original report: the same number of rows and the same values.
+-- Lab 5: Join them back and compare with the report: same row count, same values.
 -- TODO
 
 -- ----- Homework -----
 
--- Homework 1: In your own words, explain 1NF, 2NF, 3NF and BCNF using this dataset.
+-- Homework 1: Explain 1NF, 2NF, 3NF and BCNF with this data.
 -- TODO
 
--- Homework 2: Explain when a flat report like this one is useful, and how you would refresh it when the source tables change.
+-- Homework 2: When is a flat report useful? How would you refresh it?
 -- TODO

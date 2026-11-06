@@ -7,28 +7,28 @@ const work = db.getSiblingDB('student_work');
 
 // ----- Lab -----
 
-// Lab 1: Run `example.js` and look at one document from each collection.
+// Lab 1: Run `example.js`; look at one document per collection.
 // TODO
 
-// Lab 2: Find the provinces with an area above a value you choose from the data, showing only code, name and area.
+// Lab 2: Find provinces above an area you choose; show code, name and area only.
 // TODO
 
-// Lab 3: Copy the provinces into `student_work.w12_province` and create a unique index on `province_pcode`.
+// Lab 3: Copy provinces to `student_work.w12_province` with a unique index on `province_pcode`.
 // TODO
 
-// Lab 4: Delete one document from your copy, insert the same document again, and check that its fields match `cambodia.province`.
+// Lab 4: Delete one document, insert it again, check its fields against `cambodia.province`.
 // TODO
 
-// Lab 5: Update one name in your copy to the value it already has. Explain the difference between `matchedCount` and `modifiedCount`.
+// Lab 5: Update one name to its current value. `matchedCount` vs `modifiedCount`?
 // TODO
 
 // ----- Homework -----
 
-// Homework 1: Write four CRUD commands, save their output, and compare each one with the matching SQL statement.
+// Homework 1: Write four CRUD commands with output; compare each with SQL.
 // TODO
 
-// Homework 2: Explain where embedding districts inside provinces could help, and when a relational database is still the better choice.
+// Homework 2: When would embedding districts in provinces help? When is SQL better?
 // TODO
 
-// Homework 3: In `student_work`, build one province document with an array of its districts, copied from `cambodia.district`. Query a nested field with dot notation (for example `districts.district_pcode`) and the array with `$size` or `$elemMatch`.
+// Homework 3: In `student_work`, build one province document with an array of its districts. Query `districts.district_pcode` and use `$size` or `$elemMatch`.
 // TODO

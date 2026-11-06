@@ -4,48 +4,48 @@ Write the commands you ran under each task and save their output in results/.
 
 ## Lab 1
 
-Run `apps/python/cache.py` or `apps/node/cache.mjs` twice with the same province code. Save the miss and then the hit.
+Run `cache.py` or `cache.mjs` twice with one code; save the miss and the hit.
 
 TODO
 
 ## Lab 2
 
-Use redis-cli to look at the stored JSON and its TTL. Wait until the key expires and run the app again to see a miss.
+In redis-cli, view the JSON and TTL. Wait for expiry; run again for a miss.
 
 TODO
 
 ## Lab 3
 
-Build a hash, a list and a set from fields in the province or district data.
+Build a hash, a list and a set from province or district fields.
 
 TODO
 
 ## Lab 4
 
-Build a sorted set of provinces scored by area and compare its order with the same ORDER BY in MySQL. Explain what Redis does when two scores are equal.
+Build a sorted set of provinces by area; compare with MySQL ORDER BY. What does Redis do with equal scores?
 
 TODO
 
 ## Lab 5
 
-Delete your cache key and check that the next run loads it again. Write a short policy for what to do when the data changes and when Redis is down.
+Delete the app's key from task 1 (`DEL fese304:districts:<code>`), run the app again and save the miss. Write a policy for data changes and Redis downtime.
 
 TODO
 
 ## Homework 1
 
-Submit your Redis commands, their output, what you saw when the key expired, and your cache code.
+Submit Redis commands, output, expiry notes and cache code.
 
 TODO
 
 ## Homework 2
 
-For each way your capstone uses data, choose MySQL, MongoDB or Redis and explain why (durability, relationships, validation and consistency).
+For each capstone access pattern, choose MySQL, MongoDB or Redis and say why.
 
 TODO
 
 ## Homework 3
 
-Explain why Redis is fast for key lookups, and describe one requirement where a graph database would fit better than MySQL, MongoDB or Redis.
+Why is Redis fast? Give one case where a graph database fits better.
 
 TODO

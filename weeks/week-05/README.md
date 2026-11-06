@@ -6,21 +6,21 @@
 
 ## Lesson
 
-Related data lives in separate tables that are linked by keys. A **JOIN** puts them back together. `INNER JOIN` returns only the rows that match in both tables. `LEFT JOIN` returns every row from the left table, with NULLs where there is no match. Always join on the key columns in the `ON` clause.
-
-When you join a parent to its children, each parent row appears once for every child. Count carefully: after joining communes, `COUNT(*)` counts communes, while `COUNT(DISTINCT district_pcode)` counts districts.
-
-A **self join** joins a table to itself, for example to compare two provinces. Use a condition such as `a.province_pcode < b.province_pcode` so that each pair appears only once. `UNION` combines two results and removes duplicate rows; `UNION ALL` keeps them. To find rows without a match, use a LEFT JOIN and keep the rows where the right side IS NULL. An empty result is a valid answer.
+- `INNER JOIN`: only matching rows. `LEFT JOIN`: all left rows, NULL where no match. Join on keys in `ON`.
+- Joining parent to children repeats the parent. After joining communes, `COUNT(*)` counts communes; `COUNT(DISTINCT district_pcode)` counts districts.
+- **Self join:** a table joined to itself. Use `a.code < b.code` to avoid duplicate pairs.
+- `UNION` removes duplicates; `UNION ALL` keeps them.
+- Rows with no match: `LEFT JOIN ... WHERE right.key IS NULL`. Empty is a valid answer.
 
 ## Worked example
 
-Run `example.sql` (see [Run a SQL file](../../setup/README.md#run-a-sql-file)) and read the output. Then open `work.sql`.
+Run `example.sql` ([how](../../setup/README.md#run-a-sql-file)), then answer in `work.sql`.
 
 <!-- tables:start -->
 
 ## Tables for this week
 
-Read from the `cambodia` database and make your changes in `student_work`. PK means primary key and FK means foreign key. Every column is `NOT NULL`. The sample rows are the first two rows of each table, sorted by code.
+Read `cambodia`, write `student_work`. All columns are `NOT NULL`. Samples are the first two rows by code.
 
 ### `cambodia.province`
 
@@ -69,29 +69,29 @@ Sample rows:
 | KH010201 | Banteay Neang | 52.0 | KH0102 |
 | KH010202 | Bat Trang | 40.3 | KH0102 |
 
-**Join keys:** `district.province_pcode = province.province_pcode`; `commune.district_pcode = district.district_pcode`. Join on the codes, not the names.
+**Join keys:** `district.province_pcode = province.province_pcode`; `commune.district_pcode = district.district_pcode`.
 
-Run `DESCRIBE cambodia.province;` to see a table definition in MySQL. The [data guide](../../data/README.md) explains where the data comes from.
+More: [data guide](../../data/README.md).
 
 <!-- tables:end -->
 
 ## Lab tasks
 
-1. Join districts to provinces to show each district with its province name.
-2. Join communes to districts and provinces, sorted by commune code.
-3. LEFT JOIN provinces to districts and count the districts in each province.
-4. Use LEFT JOIN and IS NULL to look for districts without a province. Record what you find, even if the result is empty.
-5. Self join the province table to find pairs of provinces with the same area. If there are none, explain how your query would show them. Then compare UNION and UNION ALL by combining the same SELECT twice.
+1. Show each district with its province name.
+2. Join communes → districts → provinces, sorted by commune code.
+3. LEFT JOIN provinces to districts and count districts per province.
+4. Find districts with no province (LEFT JOIN + IS NULL). Report the result, even if empty.
+5. Self join provinces to find equal areas; if none, explain how the query would show them. Compare UNION vs UNION ALL on the same SELECT.
 
 ## Homework
 
-1. Write one report that joins all three tables, and explain what one row of the result represents.
-2. Join districts to communes and show how COUNT(*) per province changes. Fix the count with COUNT(DISTINCT district_pcode).
+1. Join all three tables and say what one result row represents.
+2. Show how joining communes changes a district count; fix it with COUNT(DISTINCT district_pcode).
 
 ## Capstone sprint
 
-**C5:** Add two join queries to your project. Note any repeated data, confusing keys or queries that were hard to write because of your design.
+**C5:** Add two join queries. Note repeated data or queries your design made hard.
 
 ## Submit
 
-Write your answers in `work.sql` and label each one, for example `-- Lab 3`. Answer the questions in `reflection.md` and save your query output in `results/`. Then commit and push to your repository. See [SUBMISSIONS.md](../../SUBMISSIONS.md) for details.
+Answers in `work.sql`, reflection in `reflection.md`, output in `results/`. Commit and push. See [SUBMISSIONS.md](../../SUBMISSIONS.md).

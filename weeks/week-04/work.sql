@@ -2,30 +2,32 @@
 -- Read from cambodia. Create and change tables only in student_work.
 -- Save the output of each task in results/.
 
+USE cambodia;  -- for your own tables, write student_work.table_name
+
 -- ----- Lab -----
 
--- Lab 1: Show each province name next to its UPPER version and its CHAR_LENGTH.
+-- Lab 1: Show each province name with its UPPER version and CHAR_LENGTH.
 -- TODO
 
--- Lab 2: Find the MIN, MAX, SUM and AVG district area. State the unit (km²) and round the average to one decimal place.
+-- Lab 2: Find MIN, MAX, SUM and AVG district area (km², AVG to one decimal).
 -- TODO
 
--- Lab 3: Group districts by `province_pcode` and show COUNT(*) and AVG(area_km2) for each province.
+-- Lab 3: Group districts by `province_pcode`: COUNT(*) and AVG(area_km2).
 -- TODO
 
--- Lab 4: Calculate the average number of districts per province (total districts ÷ number of provinces). Then use HAVING to keep only the provinces above that value.
+-- Lab 4: Work out the average districts per province (197 ÷ 25), then use HAVING to keep provinces above it.
 -- TODO
 
--- Lab 5: Use CASE to label each province as above or not above the average province area. Then use `YEAR('2018-10-04')` to show the year of the boundary data.
+-- Lab 5: Label provinces above / not above the average area with CASE. Show `YEAR('2018-10-04')`.
 -- TODO
 
 -- ----- Homework -----
 
--- Homework 1: Write three grouped reports. Use one of them to explain the difference between WHERE and HAVING.
+-- Homework 1: Write three grouped reports; use one to explain WHERE vs HAVING.
 -- TODO
 
--- Homework 2: Add up the district areas of one province and compare the total with the province's own area. Explain why rounded values may not add up exactly, and why area tells you nothing about population.
+-- Homework 2: Sum one province's district areas and compare with its area. Why can they differ? Why can't area tell you population?
 -- TODO
 
--- Homework 3: Use COALESCE in one query, for example after a LEFT JOIN, and explain which NULL it would replace. Say whether any NULL appeared in your result.
+-- Homework 3: Use COALESCE once (e.g. after a LEFT JOIN). Did any NULL appear?
 -- TODO
