@@ -1,0 +1,6 @@
+# Use LF line endings everywhere (needed for the Docker setup files on Windows).
+* text=auto eol=lf
+*.pdf binary
+*.xlsx binary
+*.png binary
+*.jpg binary

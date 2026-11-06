@@ -1,0 +1,41 @@
+name: fese304-student
+services:
+  mysql:
+    image: mysql:8.4.13
+    command: ["--skip-log-bin"]
+    environment:
+      MYSQL_ROOT_PASSWORD: local-root-only
+      MYSQL_DATABASE: cambodia
+      MYSQL_USER: practice
+      MYSQL_PASSWORD: practice-local-only
+    ports: ["127.0.0.1:3309:3306"]
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./setup/mysql:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: [CMD, mysqladmin, ping, -h, localhost, -uroot, -plocal-root-only]
+      interval: 5s
+      timeout: 3s
+      retries: 40
+  mongo:
+    image: mongo:8.0
+    ports: ["127.0.0.1:27019:27017"]
+    volumes:
+      - mongo-data:/data/db
+      - ./setup/mongo:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: [CMD, mongosh, --quiet, --eval, "quit(db.adminCommand('ping').ok ? 0 : 1)"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+  redis:
+    image: redis:7.4-alpine
+    ports: ["127.0.0.1:6389:6379"]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  mysql-data:
+  mongo-data:

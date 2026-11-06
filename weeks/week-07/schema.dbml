@@ -1,0 +1,8 @@
+// Week 7 ERD. Paste this into https://dbdiagram.io to see the diagram.
+// The province table is done. Add the district and commune tables and their Refs.
+
+Table province {
+  province_pcode char(4) [pk]
+  province_name varchar(100) [not null]
+  area_km2 decimal(12,1) [not null]
+}
