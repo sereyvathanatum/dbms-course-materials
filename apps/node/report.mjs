@@ -2,7 +2,7 @@ import mysql from 'mysql2/promise';
 import {pathToFileURL} from 'node:url';
 export async function districts(code) {
   const connection = await mysql.createConnection({host:process.env.DB_HOST ?? '127.0.0.1',
-    port:Number(process.env.DB_PORT ?? 3309),user:process.env.DB_USER ?? 'practice',
+    port:Number(process.env.DB_PORT ?? 3306),user:process.env.DB_USER ?? 'practice',
     password:process.env.DB_PASSWORD ?? 'practice-local-only',database:'cambodia'});
   try {
     const [rows] = await connection.execute(

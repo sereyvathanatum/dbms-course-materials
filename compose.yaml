@@ -1,14 +1,21 @@
+# FESE304 local databases.
+#
+# MySQL is used from Week 1. MongoDB (Weeks 12-13) and Redis (Week 14) are
+# not needed until later in the course. To save memory and download time,
+# you can comment out the `mongo` and `redis` blocks below (put `# ` at the
+# start of each line) until you reach those weeks. Uncomment them again and
+# run `docker compose up -d --wait` when you need them.
 name: fese304-student
 services:
   mysql:
-    image: mysql:8.4.13
+    image: mysql:latest
     command: ["--skip-log-bin"]
     environment:
       MYSQL_ROOT_PASSWORD: local-root-only
       MYSQL_DATABASE: cambodia
       MYSQL_USER: practice
       MYSQL_PASSWORD: practice-local-only
-    ports: ["127.0.0.1:3309:3306"]
+    ports: ["127.0.0.1:3306:3306"]
     volumes:
       - mysql-data:/var/lib/mysql
       - ./setup/mysql:/docker-entrypoint-initdb.d:ro
@@ -17,25 +24,27 @@ services:
       interval: 5s
       timeout: 3s
       retries: 40
-  mongo:
-    image: mongo:8.0
-    ports: ["127.0.0.1:27019:27017"]
-    volumes:
-      - mongo-data:/data/db
-      - ./setup/mongo:/docker-entrypoint-initdb.d:ro
-    healthcheck:
-      test: [CMD, mongosh, --quiet, --eval, "quit(db.adminCommand('ping').ok ? 0 : 1)"]
-      interval: 5s
-      timeout: 5s
-      retries: 40
-  redis:
-    image: redis:7.4-alpine
-    ports: ["127.0.0.1:6389:6379"]
-    healthcheck:
-      test: [CMD, redis-cli, ping]
-      interval: 5s
-      timeout: 3s
-      retries: 20
+  # MongoDB: first needed in Week 12. Comment out this block until then.
+  # mongo:
+  #   image: mongo:8.0
+  #   ports: ["127.0.0.1:27019:27017"]
+  #   volumes:
+  #     - mongo-data:/data/db
+  #     - ./setup/mongo:/docker-entrypoint-initdb.d:ro
+  #   healthcheck:
+  #     test: [CMD, mongosh, --quiet, --eval, "quit(db.adminCommand('ping').ok ? 0 : 1)"]
+  #     interval: 5s
+  #     timeout: 5s
+  #     retries: 40
+  # # Redis: first needed in Week 14. Comment out this block until then.
+  # redis:
+  #   image: redis:7.4-alpine
+  #   ports: ["127.0.0.1:6389:6379"]
+  #   healthcheck:
+  #     test: [CMD, redis-cli, ping]
+  #     interval: 5s
+  #     timeout: 3s
+  #     retries: 20
 volumes:
   mysql-data:
-  mongo-data:
+  mongo-data: # Used by mongo. You can leave this line as it is.

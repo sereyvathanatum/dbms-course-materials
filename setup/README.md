@@ -19,7 +19,7 @@ First start takes a few minutes. Check with `docker compose ps` (all `healthy`).
 
 | Service | Port | Login |
 |---|---|---|
-| MySQL | 3309 | `practice` / `practice-local-only` |
+| MySQL | 3306 | `practice` / `practice-local-only` |
 | MongoDB | 27019 | none |
 | Redis | 6389 | none |
 
@@ -57,7 +57,7 @@ PowerShell: `Get-Content weeks/week-12/example.js | docker compose exec -T mongo
 
 ## DBeaver
 
-New MySQL connection: `127.0.0.1`, port `3309`, `practice` / `practice-local-only`. If you see "Public Key Retrieval is not allowed", set driver property `allowPublicKeyRetrieval=true`.
+New MySQL connection: `127.0.0.1`, port `3306`, `practice` / `practice-local-only`. If you see "Public Key Retrieval is not allowed", set driver property `allowPublicKeyRetrieval=true`.
 
 ## Stop
 
@@ -65,6 +65,6 @@ New MySQL connection: `127.0.0.1`, port `3309`, `practice` / `practice-local-onl
 
 ## Problems
 
-- **Port in use:** change the host port in `compose.yaml` (e.g. `127.0.0.1:3310:3306`) and connect to the new port.
+- **Port in use:** change the host port in `compose.yaml` (e.g. `127.0.0.1:3307:3306`; a MySQL already installed on your computer usually holds 3306) and connect to the new port.
 - **Not healthy:** `docker compose logs mysql` (or `mongo`, `redis`).
 - **Windows:** use `python` or `py` instead of `python3`.

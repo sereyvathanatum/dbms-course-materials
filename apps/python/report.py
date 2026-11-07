@@ -4,7 +4,7 @@ import mysql.connector
 
 def connect():
     return mysql.connector.connect(host=os.getenv('DB_HOST','127.0.0.1'),
-        port=int(os.getenv('DB_PORT','3309')), user=os.getenv('DB_USER','practice'),
+        port=int(os.getenv('DB_PORT','3306')), user=os.getenv('DB_USER','practice'),
         password=os.getenv('DB_PASSWORD','practice-local-only'), database='cambodia')
 
 def districts(code):
