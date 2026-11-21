@@ -1,33 +1,54 @@
--- Week 04: Functions and grouped reports
--- Read from cambodia. Create and change tables only in student_work.
--- Save the output of each task in results/.
+-- WEEK-04 Practice Work (w04_food_prices)
+-- Import weeks/week-04/dataset.sql first, then write your queries below.
+-- Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-USE cambodia;  -- for your own tables, write student_work.table_name
+USE w04_food_prices;
 
--- ----- Lab -----
-
--- Lab 1: Show each province name with its UPPER version and CHAR_LENGTH.
+-- ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+-- Task 1 · Date range and total rows
 -- TODO
 
--- Lab 2: Find MIN, MAX, SUM and AVG district area (km², AVG to one decimal).
+-- Task 2 · Count observations by year
 -- TODO
 
--- Lab 3: Group districts by `province_pcode`: COUNT(*) and AVG(area_km2).
+-- Task 3 · Format dates as `YYYY-MM`
 -- TODO
 
--- Lab 4: Work out the average districts per province (197 ÷ 25), then use HAVING to keep provinces above it.
+-- Task 4 · Combine province and market name
 -- TODO
 
--- Lab 5: Label provinces above / not above the average area with CASE. Show `YEAR('2018-10-04')`.
+-- Task 5 · Count commodities per category
 -- TODO
 
--- ----- Homework -----
-
--- Homework 1: Write three grouped reports; use one to explain WHERE vs HAVING.
+-- ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+-- Task 6 · Monthly record volume in 2021
 -- TODO
 
--- Homework 2: Sum one province's district areas and compare with its area. Why can they differ? Why can't area tell you population?
+-- Task 7 · Retail rice summary per market
 -- TODO
 
--- Homework 3: Use COALESCE once (e.g. after a LEFT JOIN). Did any NULL appear?
+-- Task 8 · Provinces with at least 5 markets (`HAVING`)
+-- TODO
+
+-- Task 9 · Two-column grouping (year and price type)
+-- TODO
+
+-- Task 10 · Classify 2021 retail rice prices into bands (`CASE`)
+-- TODO
+
+-- ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+-- Task 11 · Using `COUNT(*)` inside `WHERE`
+-- TODO
+
+-- Task 12 · Mixing different commodities and units in one average
+-- TODO
+
+-- ===== Part 4: Optional Stretch (Tasks 13-15) =====
+-- Task 13 · Well-observed rice markets in 2021
+-- TODO
+
+-- Task 14 · Distinct commodities and markets per price type
+-- TODO
+
+-- Task 15 · Count `'actual'` vs `'aggregate'` flags per price type
 -- TODO

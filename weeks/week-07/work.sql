@@ -1,31 +1,54 @@
--- Week 07: ER modelling and relational mapping
--- Read from cambodia. Create and change tables only in student_work.
--- Lab 1 goes in schema.dbml; write the other answers here.
--- Save the output of each task in results/.
+-- WEEK-07 Practice Work (w07_f1)
+-- Import weeks/week-07/dataset.sql first, then write your queries below.
+-- Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-USE cambodia;  -- for your own tables, write student_work.table_name
+USE w07_f1;
 
--- ----- Lab -----
-
--- Lab 1: Complete `schema.dbml`: three tables, columns, PKs and FKs.
+-- ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+-- Task 1 · 1:N (`circuit` → `race`): First 5 rounds of 2021
 -- TODO
 
--- Lab 2: Mark each relationship 1:N and show that every child needs a parent.
+-- Task 2 · 1:N (`country` → `circuit`): Host countries
 -- TODO
 
--- Lab 3: Check with SQL that every district and commune has a parent.
+-- Task 3 · Surrogate PK vs natural alternate key
 -- TODO
 
--- Lab 4: Check whether every province and district has a child. Data today vs what the schema allows?
+-- Task 4 · Optional attribute (`NULL`)
 -- TODO
 
--- Lab 5: Write CREATE TABLE statements in `student_work` from your ERD, with the source data types.
+-- Task 5 · Two foreign-key roles to the same table
 -- TODO
 
--- ----- Homework -----
-
--- Homework 1: Explain natural vs surrogate keys using P-codes and MongoDB `_id`.
+-- ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+-- Task 6 · Associative table in action (`race_result`)
 -- TODO
 
--- Homework 2: Describe conceptual, logical and physical design for this data. Sketch an M:N junction, a weak entity and a specialization on paper.
+-- Task 7 · Many-to-many over time (driver–constructor)
+-- TODO
+
+-- Task 8 · Zero participation (`0..N` countries with no circuit)
+-- TODO
+
+-- Task 9 · Why `(race_id, constructor_id)` cannot be a primary key
+-- TODO
+
+-- Task 10 · Optional knockout attributes (`q1_millis` vs `q2_millis`)
+-- TODO
+
+-- ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+-- Task 11 · Putting `race_id` directly on `driver`
+-- TODO
+
+-- Task 12 · Using a nullable column (`position_number`) as a Primary Key
+-- TODO
+
+-- ===== Part 4: Optional Stretch (Tasks 13-15) =====
+-- Task 13 · Circuits reused across multiple races
+-- TODO
+
+-- Task 14 · Drivers with different birth and nationality countries
+-- TODO
+
+-- Task 15 · Match qualifying and race results by `(race_id, driver_id)`
 -- TODO

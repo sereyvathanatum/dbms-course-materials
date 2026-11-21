@@ -1,9 +1,19 @@
-USE student_work;
-CREATE TABLE IF NOT EXISTS w02_province (
- province_pcode CHAR(4) PRIMARY KEY, province_name VARCHAR(100) NOT NULL,
- area_km2 DECIMAL(12,1) NOT NULL CHECK (area_km2 > 0));
-INSERT INTO w02_province SELECT p.* FROM cambodia.province p
-WHERE p.province_pcode IN (SELECT province_pcode FROM
- (SELECT province_pcode FROM cambodia.province ORDER BY province_pcode LIMIT 2) AS chosen)
-AND NOT EXISTS (SELECT 1 FROM w02_province w WHERE w.province_pcode=p.province_pcode);
-SELECT * FROM w02_province ORDER BY province_pcode;
+-- WEEK-02 Worked Example (w02_meteorites)
+USE w02_meteorites;
+
+CREATE DATABASE IF NOT EXISTS student_work;
+DROP TABLE IF EXISTS student_work.w02_demo;
+
+CREATE TABLE student_work.w02_demo (
+    meteorite_id INT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL
+);
+
+INSERT INTO student_work.w02_demo (meteorite_id, name)
+SELECT meteorite_id, name
+FROM meteorite_landing
+ORDER BY meteorite_id
+LIMIT 2;
+
+SELECT meteorite_id, name FROM student_work.w02_demo ORDER BY meteorite_id;
+DROP TABLE student_work.w02_demo;

@@ -1,36 +1,54 @@
--- Week 10: Objects, transactions and security
--- Read from cambodia. Create and change tables only in student_work.
--- Save the output of each task in results/.
+-- WEEK-10 Practice Work (w10_sakila)
+-- Import weeks/week-10/dataset.sql first, then write your queries below.
+-- Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-USE cambodia;  -- for your own tables, write student_work.table_name
+USE w10_sakila;
 
--- ----- Lab -----
-
--- Lab 1: Create a view of district counts per province in `student_work`.
+-- ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+-- Task 1 · Query a built-in reporting view (`sales_by_store`)
 -- TODO
 
--- Lab 2: Run `CREATE TABLE student_work.w10_district AS SELECT * FROM cambodia.district;` (no indexes copied). Check `SHOW INDEX`, run EXPLAIN on a `province_pcode` filter, add an index, run EXPLAIN again.
+-- Task 2 · Top 5 film categories from `sales_by_film_category`
 -- TODO
 
--- Lab 3: Open two sessions and run `START TRANSACTION;` in both. In each, update `student_work.w10_province` where `province_pcode = 'KH01'`, setting the name to its current value. Do A first and don't commit: B waits. Roll back A, then B.
+-- Task 3 · Inspect indexes on `rental`
 -- TODO
 
--- Lab 4: Create a procedure that lists districts for an input province code; call it.
+-- Task 4 · Read an `EXPLAIN` plan for a date range
 -- TODO
 
--- Lab 5: Create `lab10_province` (copy of provinces), `lab10_audit` and an AFTER DELETE trigger `lab10_deleted` that logs deletes. Delete a row in a transaction, check the audit table, roll back.
+-- Task 5 · Read an `EXPLAIN` plan for a foreign-key lookup
 -- TODO
 
--- Lab 6: Self-study: run `SHOW GRANTS;`. On paper, write CREATE USER, GRANT and REVOKE for a SELECT-only app account (`practice` can't run them).
+-- ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+-- Task 6 · Create a store inventory view
 -- TODO
 
--- ----- Homework -----
-
--- Homework 1: Explain tasks 3 and 5 with ACID.
+-- Task 7 · Create a top-customers view
 -- TODO
 
--- Homework 2: Submit your view, index, procedure and trigger scripts with output, plus your written GRANT/REVOKE. Why is the audit row rolled back too?
+-- Task 8 · Create and `CALL` a stored procedure
 -- TODO
 
--- Homework 3: Use your view to explain the three levels and data independence.
+-- Task 9 · Watch an index turn a full scan (`ALL`) into a fast lookup (`ref`)
+-- TODO
+
+-- Task 10 · Practice an atomic transaction (`START TRANSACTION` + `ROLLBACK`)
+-- TODO
+
+-- ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+-- Task 11 · Wrapping an indexed column in a function defeats the index
+-- TODO
+
+-- Task 12 · Leading wildcard (`'%SON%'`) vs prefix (`'G%'`) on an indexed column
+-- TODO
+
+-- ===== Part 4: Optional Stretch (Tasks 13-15) =====
+-- Task 13 · `AFTER INSERT` audit trigger inside a transaction
+-- TODO
+
+-- Task 14 · Partial rollback with `SAVEPOINT`
+-- TODO
+
+-- Task 15 · Check permissions & least-privilege design
 -- TODO

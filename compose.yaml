@@ -1,14 +1,13 @@
-# FESE304 local databases.
+# FESE304 local databases (MySQL 8.4 + MongoDB 8.0 + Redis 7.4).
 #
 # MySQL is used from Week 1. MongoDB (Weeks 12-13) and Redis (Week 14) are
 # not needed until later in the course. To save memory and download time,
-# you can comment out the `mongo` and `redis` blocks below (put `# ` at the
-# start of each line) until you reach those weeks. Uncomment them again and
-# run `docker compose up -d --wait` when you need them.
+# you can uncomment `mongo` and `redis` when you reach Week 12 / Week 14 and
+# run `docker compose up -d --wait` again.
 name: fese304-student
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:8.4
     command: ["--skip-log-bin"]
     environment:
       MYSQL_ROOT_PASSWORD: local-root-only
@@ -17,14 +16,14 @@ services:
       MYSQL_PASSWORD: practice-local-only
     ports: ["127.0.0.1:3306:3306"]
     volumes:
-      - mysql-data:/var/lib/mysql
+      - mysql-84-data:/var/lib/mysql
       - ./setup/mysql:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test: [CMD, mysqladmin, ping, -h, localhost, -uroot, -plocal-root-only]
       interval: 5s
       timeout: 3s
       retries: 40
-  # MongoDB: first needed in Week 12. Comment out this block until then.
+  # MongoDB 8.0: first needed in Week 12. Uncomment when you reach Week 12.
   # mongo:
   #   image: mongo:8.0
   #   ports: ["127.0.0.1:27019:27017"]
@@ -36,7 +35,7 @@ services:
   #     interval: 5s
   #     timeout: 5s
   #     retries: 40
-  # # Redis: first needed in Week 14. Comment out this block until then.
+  # Redis 7.4: first needed in Week 14. Uncomment when you reach Week 14.
   # redis:
   #   image: redis:7.4-alpine
   #   ports: ["127.0.0.1:6389:6379"]
@@ -46,5 +45,5 @@ services:
   #     timeout: 3s
   #     retries: 20
 volumes:
-  mysql-data:
+  mysql-84-data:
   mongo-data: # Used by mongo. You can leave this line as it is.

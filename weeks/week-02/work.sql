@@ -1,33 +1,54 @@
--- Week 02: Tables, keys and constraints
--- Read from cambodia. Create and change tables only in student_work.
--- Save the output of each task in results/.
+-- WEEK-02 Practice Work (w02_meteorites)
+-- Import weeks/week-02/dataset.sql first, then write your queries below.
+-- Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-USE cambodia;  -- for your own tables, write student_work.table_name
+USE w02_meteorites;
 
--- ----- Lab -----
-
--- Lab 1: Explain the data type of each column in the three tables.
+-- ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+-- Task 1 · Inspect a table’s columns and keys
 -- TODO
 
--- Lab 2: Create `student_work.lab02_province` with a PK, NOT NULL columns and `CHECK (area_km2 > 0)`.
+-- Task 2 · Look up one specimen by primary key
 -- TODO
 
--- Lab 3: Copy the first two provinces by code into it with `INSERT ... SELECT`.
+-- Task 3 · Find specimens missing a landing year
 -- TODO
 
--- Lab 4: Insert one of them again and save the duplicate-key error.
+-- Task 4 · Five lightest specimens with a known mass
 -- TODO
 
--- Lab 5: Create `student_work.lab02_district` with an FK to `lab02_province` and load only matching districts. Why load parents first?
+-- Task 5 · Look up three meteorite classes
 -- TODO
 
--- ----- Homework -----
-
--- Homework 1: Create `student_work.lab02_commune` with an FK to `lab02_district` and load only matching communes.
+-- ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+-- Task 6 · Create a practice table and load 5 rows
 -- TODO
 
--- Homework 2: Run `SHOW CREATE TABLE` and say what each constraint blocks.
+-- Task 7 · Add a column with a `DEFAULT` value
 -- TODO
 
--- Homework 3: Add a nullable column to `lab02_province` with ALTER TABLE. Then delete a province that still has districts in `lab02_district` and save the FK error. Explain ON DELETE RESTRICT vs CASCADE.
+-- Task 8 · Enforce a `CHECK` constraint on mass
+-- TODO
+
+-- Task 9 · Enforce a `UNIQUE` constraint on name
+-- TODO
+
+-- Task 10 · Create a parent–child `FOREIGN KEY` pair
+-- TODO
+
+-- ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+-- Task 11 · Comparing `NULL` with `=`
+-- TODO
+
+-- Task 12 · `CHECK` alone still allows `NULL`
+-- TODO
+
+-- ===== Part 4: Optional Stretch (Tasks 13-15) =====
+-- Task 13 · Find `'Fell'` specimens missing coordinates
+-- TODO
+
+-- Task 14 · Check if `name` is unique across the whole table
+-- TODO
+
+-- Task 15 · Change a nullable column to `NOT NULL`
 -- TODO

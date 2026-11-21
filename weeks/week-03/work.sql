@@ -1,33 +1,54 @@
--- Week 03: Filtering and safe CRUD
--- Read from cambodia. Create and change tables only in student_work.
--- Save the output of each task in results/.
+-- WEEK-03 Practice Work (w03_aviation)
+-- Import weeks/week-03/dataset.sql first, then write your queries below.
+-- Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-USE cambodia;  -- for your own tables, write student_work.table_name
+USE w03_aviation;
 
--- ----- Lab -----
-
--- Lab 1: List provinces whose names start with K, sorted by code.
+-- ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+-- Task 1 · All Cambodian airports
 -- TODO
 
--- Lab 2: Get the MIN and AVG province area, then use those values in BETWEEN to list provinces in that range. (Week 6 does this in one query.)
+-- Task 2 · First 10 Thai airports with no IATA code
 -- TODO
 
--- Lab 3: Count NULLs in each name and area column.
+-- Task 3 · Five highest airports
 -- TODO
 
--- Lab 4: In a transaction, delete the first province from your copy (e.g. `w03_province`) and check the count.
+-- Task 4 · Vietnamese airports in an elevation range
 -- TODO
 
--- Lab 5: Roll back and check the row is back. Then delete and re-insert it from `cambodia.province` in a new transaction, and roll back.
+-- Task 5 · Countries in Asia or Oceania
 -- TODO
 
--- ----- Homework -----
-
--- Homework 1: Write six filters that use AND/OR, IN, BETWEEN, LIKE and IS NULL.
+-- ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+-- Task 6 · Cambodian international airports (`LIKE`)
 -- TODO
 
--- Homework 2: List the distinct `province_pcode` values in `cambodia.district`. Separately, show each district's code and `area_km2 * 100 AS area_ha` (AS renames a column). Compare `COUNT(*)` with `COUNT(DISTINCT province_pcode)`.
+-- Task 7 · Scheduled large or medium airports in Cambodia and Laos
 -- TODO
 
--- Homework 3: Why is UPDATE without WHERE dangerous? Update one row of your copy to its current name in a transaction, then roll back.
+-- Task 8 · Routes with missing equipment
+-- TODO
+
+-- Task 9 · Safe `UPDATE` practice in `student_work`
+-- TODO
+
+-- Task 10 · Safe `DELETE` practice in `student_work`
+-- TODO
+
+-- ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+-- Task 11 · Missing parentheses (`AND` runs before `OR`)
+-- TODO
+
+-- Task 12 · Inclusive vs exclusive range bounds
+-- TODO
+
+-- ===== Part 4: Optional Stretch (Tasks 13-15) =====
+-- Task 13 · Thai airports with ICAO but no IATA code
+-- TODO
+
+-- Task 14 · Non-stop routes between BKK and SIN in either direction
+-- TODO
+
+-- Task 15 · Safe `INSERT` into an empty scratch table
 -- TODO

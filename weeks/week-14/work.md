@@ -1,51 +1,93 @@
-# Week 14: Redis caching and choosing a database
+# WEEK-14 Practice Work (Redis `fese304:w14:*`)
 
-Write the commands you ran under each task and save their output in results/.
+Load `weeks/week-14/dataset.redis` first, then paste your Redis commands and outputs below.
 
-## Lab 1
+## Task 1 · Read a cached JSON string and check its `TTL`
 
-Run `cache.py` or `cache.mjs` twice with one code; save the miss and the hit.
+```redis
+# TODO
+```
 
-TODO
+## Task 2 · Top 5 F1 2024 drivers with scores (`ZREVRANGE`)
 
-## Lab 2
+```redis
+# TODO
+```
 
-In redis-cli, view the JSON and TTL. Wait for expiry; run again for a miss.
+## Task 3 · Read an entire driver profile hash (`HGETALL`)
 
-TODO
+```redis
+# TODO
+```
 
-## Lab 3
+## Task 4 · Fetch specific hash fields (`HMGET`)
 
-Build a hash, a list and a set from province or district fields.
+```redis
+# TODO
+```
 
-TODO
+## Task 5 · Set size and membership (`SCARD`, `SISMEMBER`)
 
-## Lab 4
+```redis
+# TODO
+```
 
-Build a sorted set of provinces by area; compare with MySQL ORDER BY. What does Redis do with equal scores?
+## Task 6 · Find a category’s rank and score (`ZREVRANK`, `ZSCORE`)
 
-TODO
+```redis
+# TODO
+```
 
-## Lab 5
+## Task 7 · Score-range counts and bottom-ranked teams (`ZCOUNT`, `ZRANGE`)
 
-Delete the app's key from task 1 (`DEL fese304:districts:<code>`), run the app again and save the miss. Write a policy for data changes and Redis downtime.
+```redis
+# TODO
+```
 
-TODO
+## Task 8 · Shopping cart hash (`HSET`, `HINCRBY`, `HGETALL`, `DEL`)
 
-## Homework 1
+```redis
+# TODO
+```
 
-Submit Redis commands, output, expiry notes and cache code.
+## Task 9 · Compare 2024 and 2025 podium sets (`SINTER`, `SDIFF`)
 
-TODO
+```redis
+# TODO
+```
 
-## Homework 2
+## Task 10 · Recent-activity feed list (`LPUSH`, `LTRIM`, `LRANGE`)
 
-For each capstone access pattern, choose MySQL, MongoDB or Redis and say why.
+```redis
+# TODO
+```
 
-TODO
+## Task 11 · Stale cache key missing a `TTL` (`TTL = -1`)
 
-## Homework 3
+```redis
+# TODO
+```
 
-Why is Redis fast? Give one case where a graph database fits better.
+## Task 12 · Bare `SET` wipes out an existing `TTL`
 
-TODO
+```redis
+# TODO
+```
+
+## Task 13 · Live leaderboard score update (`COPY`, `ZINCRBY`, `ZREVRANK`)
+
+```redis
+# TODO
+```
+
+## Task 14 · Cache-aside invalidation and repopulation
+
+```redis
+# TODO
+```
+
+## Task 15 · Combine two seasons into one leaderboard (`ZUNIONSTORE`)
+
+```redis
+# TODO
+```

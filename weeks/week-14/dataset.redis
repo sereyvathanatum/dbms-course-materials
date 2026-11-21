@@ -1,0 +1,95 @@
+DEL fese304:w14:lb:f1_2024 fese304:w14:lb:f1_2025 fese304:w14:lb:f1_constructors_2024 fese304:w14:lb:olist_categories
+DEL fese304:w14:podium_drivers:2024 fese304:w14:podium_drivers:2025
+DEL fese304:w14:driver:max-verstappen fese304:w14:driver:lando-norris fese304:w14:driver:charles-leclerc fese304:w14:driver:oscar-piastri fese304:w14:driver:carlos-sainz-jr fese304:w14:driver:george-russell fese304:w14:driver:lewis-hamilton fese304:w14:driver:sergio-perez fese304:w14:driver:fernando-alonso fese304:w14:driver:pierre-gasly
+DEL fese304:w14:cache:category:health_beauty fese304:w14:cache:category:watches_gifts fese304:w14:cache:driver_standings:2024 fese304:w14:cache:stale_demo
+ZADD fese304:w14:lb:f1_2024 399.0 max-verstappen
+ZADD fese304:w14:lb:f1_2024 344.0 lando-norris
+ZADD fese304:w14:lb:f1_2024 327.0 charles-leclerc
+ZADD fese304:w14:lb:f1_2024 265.0 oscar-piastri
+ZADD fese304:w14:lb:f1_2024 262.0 carlos-sainz-jr
+ZADD fese304:w14:lb:f1_2024 226.0 george-russell
+ZADD fese304:w14:lb:f1_2024 207.0 lewis-hamilton
+ZADD fese304:w14:lb:f1_2024 138.0 sergio-perez
+ZADD fese304:w14:lb:f1_2024 70.0 fernando-alonso
+ZADD fese304:w14:lb:f1_2024 40.0 pierre-gasly
+ZADD fese304:w14:lb:f1_2024 36.0 nico-hulkenberg
+ZADD fese304:w14:lb:f1_2024 29.0 yuki-tsunoda
+ZADD fese304:w14:lb:f1_2024 24.0 lance-stroll
+ZADD fese304:w14:lb:f1_2024 23.0 esteban-ocon
+ZADD fese304:w14:lb:f1_2024 14.0 kevin-magnussen
+ZADD fese304:w14:lb:f1_2024 12.0 alexander-albon
+ZADD fese304:w14:lb:f1_2024 7.0 daniel-ricciardo
+ZADD fese304:w14:lb:f1_2024 7.0 oliver-bearman
+ZADD fese304:w14:lb:f1_2024 5.0 franco-colapinto
+ZADD fese304:w14:lb:f1_2024 4.0 guanyu-zhou
+ZADD fese304:w14:lb:f1_2024 4.0 liam-lawson
+ZADD fese304:w14:lb:f1_2024 0.0 jack-doohan
+ZADD fese304:w14:lb:f1_2024 0.0 logan-sargeant
+ZADD fese304:w14:lb:f1_2024 0.0 valtteri-bottas
+ZADD fese304:w14:lb:f1_2025 394.0 lando-norris
+ZADD fese304:w14:lb:f1_2025 389.0 max-verstappen
+ZADD fese304:w14:lb:f1_2025 381.0 oscar-piastri
+ZADD fese304:w14:lb:f1_2025 289.0 george-russell
+ZADD fese304:w14:lb:f1_2025 225.0 charles-leclerc
+ZADD fese304:w14:lb:f1_2025 135.0 kimi-antonelli
+ZADD fese304:w14:lb:f1_2025 135.0 lewis-hamilton
+ZADD fese304:w14:lb:f1_2025 70.0 alexander-albon
+ZADD fese304:w14:lb:f1_2025 54.0 carlos-sainz-jr
+ZADD fese304:w14:lb:f1_2025 51.0 fernando-alonso
+ZADD fese304:w14:lb:f1_2025 51.0 nico-hulkenberg
+ZADD fese304:w14:lb:f1_2025 50.0 isack-hadjar
+ZADD fese304:w14:lb:f1_2025 39.0 oliver-bearman
+ZADD fese304:w14:lb:f1_2025 38.0 liam-lawson
+ZADD fese304:w14:lb:f1_2025 34.0 esteban-ocon
+ZADD fese304:w14:lb:f1_2025 29.0 lance-stroll
+ZADD fese304:w14:lb:f1_2025 21.0 yuki-tsunoda
+ZADD fese304:w14:lb:f1_2025 20.0 pierre-gasly
+ZADD fese304:w14:lb:f1_2025 19.0 gabriel-bortoleto
+ZADD fese304:w14:lb:f1_2025 0.0 franco-colapinto
+ZADD fese304:w14:lb:f1_2025 0.0 jack-doohan
+ZADD fese304:w14:lb:f1_constructors_2024 609.0 mclaren
+ZADD fese304:w14:lb:f1_constructors_2024 595.0 ferrari
+ZADD fese304:w14:lb:f1_constructors_2024 537.0 red-bull
+ZADD fese304:w14:lb:f1_constructors_2024 433.0 mercedes
+ZADD fese304:w14:lb:f1_constructors_2024 94.0 aston-martin
+ZADD fese304:w14:lb:f1_constructors_2024 63.0 alpine
+ZADD fese304:w14:lb:f1_constructors_2024 51.0 haas
+ZADD fese304:w14:lb:f1_constructors_2024 40.0 rb
+ZADD fese304:w14:lb:f1_constructors_2024 17.0 williams
+ZADD fese304:w14:lb:f1_constructors_2024 4.0 kick-sauber
+ZADD fese304:w14:lb:olist_categories 1258681.34 health_beauty
+ZADD fese304:w14:lb:olist_categories 1205005.68 watches_gifts
+ZADD fese304:w14:lb:olist_categories 1036988.68 bed_bath_table
+ZADD fese304:w14:lb:olist_categories 988048.97 sports_leisure
+ZADD fese304:w14:lb:olist_categories 911954.32 computers_accessories
+ZADD fese304:w14:lb:olist_categories 729762.49 furniture_decor
+ZADD fese304:w14:lb:olist_categories 635290.85 cool_stuff
+ZADD fese304:w14:lb:olist_categories 632248.66 housewares
+ZADD fese304:w14:lb:olist_categories 592720.11 auto
+ZADD fese304:w14:lb:olist_categories 485256.46 garden_tools
+ZADD fese304:w14:lb:olist_categories 483946.60 toys
+ZADD fese304:w14:lb:olist_categories 411764.89 baby
+ZADD fese304:w14:lb:olist_categories 399124.87 perfumery
+ZADD fese304:w14:lb:olist_categories 323667.53 telephony
+ZADD fese304:w14:lb:olist_categories 273960.70 office_furniture
+ZADD fese304:w14:lb:olist_categories 230943.23 stationery
+ZADD fese304:w14:lb:olist_categories 222963.13 computers
+ZADD fese304:w14:lb:olist_categories 214315.41 pet_shop
+ZADD fese304:w14:lb:olist_categories 191498.88 musical_instruments
+ZADD fese304:w14:lb:olist_categories 190648.58 small_appliances
+SADD fese304:w14:podium_drivers:2024 carlos-sainz-jr charles-leclerc esteban-ocon george-russell lando-norris lewis-hamilton max-verstappen oscar-piastri pierre-gasly sergio-perez
+SADD fese304:w14:podium_drivers:2025 carlos-sainz-jr charles-leclerc george-russell isack-hadjar kimi-antonelli lando-norris max-verstappen nico-hulkenberg oscar-piastri
+HSET fese304:w14:driver:max-verstappen name "Max Verstappen" code "VER" number "3" nationality "Netherlands" points_2024 "399" wins_2024 "9" career_wins "74" career_podiums "139"
+HSET fese304:w14:driver:lando-norris name "Lando Norris" code "NOR" number "4" nationality "United Kingdom" points_2024 "344" wins_2024 "4" career_wins "14" career_podiums "50"
+HSET fese304:w14:driver:charles-leclerc name "Charles Leclerc" code "LEC" number "16" nationality "Monaco" points_2024 "327" wins_2024 "3" career_wins "9" career_podiums "56"
+HSET fese304:w14:driver:oscar-piastri name "Oscar Piastri" code "PIA" number "81" nationality "Australia" points_2024 "265" wins_2024 "2" career_wins "9" career_podiums "28"
+HSET fese304:w14:driver:carlos-sainz-jr name "Carlos Sainz Jr." code "SAI" number "55" nationality "Spain" points_2024 "262" wins_2024 "2" career_wins "4" career_podiums "29"
+HSET fese304:w14:driver:george-russell name "George Russell" code "RUS" number "63" nationality "United Kingdom" points_2024 "226" wins_2024 "2" career_wins "8" career_podiums "32"
+HSET fese304:w14:driver:lewis-hamilton name "Lewis Hamilton" code "HAM" number "44" nationality "United Kingdom" points_2024 "207" wins_2024 "2" career_wins "106" career_podiums "209"
+HSET fese304:w14:driver:sergio-perez name "Sergio Pérez" code "PER" number "11" nationality "Mexico" points_2024 "138" wins_2024 "0" career_wins "6" career_podiums "39"
+HSET fese304:w14:driver:fernando-alonso name "Fernando Alonso" code "ALO" number "14" nationality "Spain" points_2024 "70" wins_2024 "0" career_wins "32" career_podiums "106"
+HSET fese304:w14:driver:pierre-gasly name "Pierre Gasly" code "GAS" number "10" nationality "France" points_2024 "40" wins_2024 "0" career_wins "1" career_podiums "5"
+SET fese304:w14:cache:category:health_beauty '{"category":"health_beauty","gmv":1258681.34,"distinct_orders":8836,"source":"olist_mysql"}' EX 3600
+SET fese304:w14:cache:category:watches_gifts '{"category":"watches_gifts","gmv":1205005.68,"distinct_orders":5624,"source":"olist_mysql"}' EX 3600
+SET fese304:w14:cache:driver_standings:2024 '{"season":2024,"leader":"max-verstappen","points":399,"runner_up":"lando-norris"}' EX 1800
+SET fese304:w14:cache:stale_demo '{"driver_id":"lando-norris","points_2024":319,"note":"stale cached snapshot after Round 23 without TTL"}'

@@ -19,49 +19,48 @@ First start takes a few minutes. Check with `docker compose ps` (all `healthy`).
 
 | Service | Port | Login |
 |---|---|---|
-| MySQL | 3306 | `practice` / `practice-local-only` |
-| MongoDB | 27019 | none |
-| Redis | 6389 | none |
+| MySQL 8.4 | 3306 | `practice` / `practice-local-only` |
+| MongoDB 8.0 *(uncomment in Week 12)* | 27019 | none |
+| Redis 7.4 *(uncomment in Week 14)* | 6389 | none |
 
-Host: `127.0.0.1`. Read `cambodia`; write `student_work`. In MySQL, `practice` cannot change `cambodia`. MongoDB has no login, so leave `cambodia` alone yourself. These passwords are for this local setup only.
+Host: `127.0.0.1`. Each week has its own real-world `dataset.sql`, `dataset.js`, or `dataset.redis` inside `weeks/week-XX/`. Keep each week's dataset clean and create your own scratch tables in `student_work`.
 
-Check: `SELECT COUNT(*) FROM cambodia.province;` returns 25 (district 197, commune 1633).
+## Import a Week’s Dataset
+
+- **MySQL (Weeks 1–8, 10–11):** Follow the [DBeaver Import Guide](DBEAVER-IMPORT-GUIDE.md) (`Alt+X` on `weeks/week-XX/dataset.sql`), or run from the terminal:
+  ```bash
+  docker compose exec -T mysql mysql -upractice -ppractice-local-only < weeks/week-01/dataset.sql
+  ```
+  PowerShell: `Get-Content weeks/week-01/dataset.sql | docker compose exec -T mysql mysql -upractice -ppractice-local-only`
+- **MongoDB (Weeks 12–13):**
+  ```bash
+  docker compose exec -T mongo mongosh --quiet < weeks/week-12/dataset.js
+  ```
+- **Redis (Week 14):**
+  ```bash
+  docker compose exec -T redis redis-cli < weeks/week-14/dataset.redis
+  ```
 
 ## Consoles
 
 ```bash
-docker compose exec mysql mysql -upractice -ppractice-local-only cambodia
-docker compose exec mongo mongosh cambodia
+docker compose exec mysql mysql -upractice -ppractice-local-only
+docker compose exec mongo mongosh
 docker compose exec redis redis-cli
 ```
 
 Ignore MySQL's "password on the command line" warning.
 
-## Run a SQL file
+## Run a SQL or MongoDB file
 
 ```bash
 docker compose exec -T mysql mysql -upractice -ppractice-local-only < weeks/week-01/example.sql
-```
-
-PowerShell: `Get-Content weeks/week-01/example.sql | docker compose exec -T mysql mysql -upractice -ppractice-local-only`
-
-Or open the file in DBeaver.
-
-## Run a MongoDB file
-
-```bash
 docker compose exec -T mongo mongosh --quiet < weeks/week-12/example.js
 ```
 
-PowerShell: `Get-Content weeks/week-12/example.js | docker compose exec -T mongo mongosh --quiet`
+## Stop & Reset
 
-## DBeaver
-
-New MySQL connection: `127.0.0.1`, port `3306`, `practice` / `practice-local-only`. If you see "Public Key Retrieval is not allowed", set driver property `allowPublicKeyRetrieval=true`.
-
-## Stop
-
-`docker compose down` keeps your work. `docker compose down -v` deletes it and resets the data. Redis data is not kept.
+`docker compose down` keeps your databases. `docker compose down -v` wipes volumes and starts completely fresh. Redis data is in-memory and resets on container restart.
 
 ## Problems
 

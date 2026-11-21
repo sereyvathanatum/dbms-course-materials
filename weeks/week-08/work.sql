@@ -1,30 +1,54 @@
--- Week 08: Normalization
--- Read from cambodia. Create and change tables only in student_work.
--- Save the output of each task in results/.
+-- WEEK-08 Practice Work (w08_normalization)
+-- Import weeks/week-08/dataset.sql first, then write your queries below.
+-- Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-USE cambodia;  -- for your own tables, write student_work.table_name
+USE w08_normalization;
 
--- ----- Lab -----
-
--- Lab 1: Run the report in `example.sql`; save its columns and output.
+-- ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+-- Task 1 · Spot the 1NF problem in `raw_movies`
 -- TODO
 
--- Lab 2: Write the functional dependencies and a candidate key.
+-- Task 2 · Why `order_id` alone cannot be the primary key
 -- TODO
 
--- Lab 3: Use repeated province values to explain update, insert and delete anomalies. Don't change the source.
+-- Task 3 · Find multi-item orders (where order & customer info repeats)
 -- TODO
 
--- Lab 4: Split the report into province, district and commune tables with keys.
+-- Task 4 · Spot seller update anomalies (3NF)
 -- TODO
 
--- Lab 5: Join them back and compare with the report: same row count, same values.
+-- Task 5 · Spot category translation redundancy (3NF)
 -- TODO
 
--- ----- Homework -----
-
--- Homework 1: Explain 1NF, 2NF, 3NF and BCNF with this data.
+-- ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+-- Task 6 · 1NF hands-on: one genre per row
 -- TODO
 
--- Homework 2: When is a flat report useful? How would you refresh it?
+-- Task 7 · 2NF: split `raw_order_lines` into order headers and order items
+-- TODO
+
+-- Task 8 · 3NF (Part A): separate customers from orders
+-- TODO
+
+-- Task 9 · 3NF (Part B): separate sellers, products, categories, and lines
+-- TODO
+
+-- Task 10 · Lossless-join check (rejoin your 6 normalized tables)
+-- TODO
+
+-- ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+-- Task 11 · Lossy join on a non-key column (`customer_city`)
+-- TODO
+
+-- Task 12 · Silent row loss when forgetting `order_item_id`
+-- TODO
+
+-- ===== Part 4: Optional Stretch (Tasks 13-15) =====
+-- Task 13 · Test a functional dependency (`order_id → customer_id`)
+-- TODO
+
+-- Task 14 · Test a transitive dependency (`product_category_pt → product_category_en`)
+-- TODO
+
+-- Task 15 · Run a clean business report on your 3NF tables
 -- TODO

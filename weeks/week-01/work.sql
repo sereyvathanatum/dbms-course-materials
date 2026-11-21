@@ -1,33 +1,54 @@
--- Week 01: Welcome and first queries
--- Read from cambodia. Create and change tables only in student_work.
--- Save the output of each task in results/.
+-- WEEK-01 Practice Work (w01_cambodia)
+-- Import weeks/week-01/dataset.sql first, then write your queries below.
+-- Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-USE cambodia;  -- for your own tables, write student_work.table_name
+USE w01_cambodia;
 
--- ----- Lab -----
-
--- Lab 1: Run `SELECT VERSION();`. Explain client, server and database in two sentences.
+-- ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+-- Task 1 · List all provinces
 -- TODO
 
--- Lab 2: Run `SHOW TABLES;` and `DESCRIBE` each table. Name each primary key.
+-- Task 2 · Five largest provinces
 -- TODO
 
--- Lab 3: List all province codes and names, sorted by code.
+-- Task 3 · Find Phnom Penh
 -- TODO
 
--- Lab 4: List the five largest provinces by area (then by code).
+-- Task 4 · First 8 districts alphabetically
 -- TODO
 
--- Lab 5: Count the rows in each table and compare with the CSV files in `data/`.
+-- Task 5 · Five smallest communes
 -- TODO
 
--- ----- Homework -----
-
--- Homework 1: Write five SELECT queries with named columns (no `*`) and ORDER BY.
+-- ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+-- Task 6 · Convert area to hectares
 -- TODO
 
--- Homework 2: Use one result to explain data vs information.
+-- Task 7 · Districts in Phnom Penh
 -- TODO
 
--- Homework 3: Page through provinces two at a time with `LIMIT 2 OFFSET ...`. Why does paging need ORDER BY?
+-- Task 8 · Small provinces under 1,000 km²
+-- TODO
+
+-- Task 9 · Provinces starting with “Kampong”
+-- TODO
+
+-- Task 10 · Page 2 of the district list
+-- TODO
+
+-- ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+-- Task 11 · Wildcard with `=` instead of `LIKE`
+-- TODO
+
+-- Task 12 · Off-by-one `OFFSET`
+-- TODO
+
+-- ===== Part 4: Optional Stretch (Tasks 13-15) =====
+-- Task 13 · Districts in two provinces within an area range
+-- TODO
+
+-- Task 14 · Communes in Mongkol Borei (`KH0102`)
+-- TODO
+
+-- Task 15 · Compare every province to Phnom Penh
 -- TODO

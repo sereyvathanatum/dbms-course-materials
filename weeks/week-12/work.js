@@ -1,34 +1,54 @@
-// Week 12: NoSQL and MongoDB CRUD
-// Read from cambodia. Insert, update and delete only in student_work.
-// Save the output of each task in results/.
+// WEEK-12 Practice Work (w12_olist)
+// Load weeks/week-12/dataset.js first, then write your queries below.
+// Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-const source = db.getSiblingDB('cambodia');
-const work = db.getSiblingDB('student_work');
+const db = db.getSiblingDB('w12_olist');
 
-// ----- Lab -----
-
-// Lab 1: Run `example.js`; look at one document per collection.
+// ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+// Task 1 · Look up one order by `_id`
 // TODO
 
-// Lab 2: Find provinces above an area you choose; show code, name and area only.
+// Task 2 · Delivered orders in Rio de Janeiro (`RJ`)
 // TODO
 
-// Lab 3: Copy provinces to `student_work.w12_province` with a unique index on `province_pcode`.
+// Task 3 · Top 5 orders over 1,000 BRL (`$gt`, `sort`, `limit`)
 // TODO
 
-// Lab 4: Delete one document, insert it again, check its fields against `cambodia.province`.
+// Task 4 · Canceled or unavailable orders (`$in`)
 // TODO
 
-// Lab 5: Update one name to its current value. `matchedCount` vs `modifiedCount`?
+// Task 5 · Top 5 five-star orders in São Paulo (`SP`)
 // TODO
 
-// ----- Homework -----
-
-// Homework 1: Write four CRUD commands with output; compare each with SQL.
+// ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+// Task 6 · Delivered orders with no `review` object (`$exists: false`)
 // TODO
 
-// Homework 2: When would embedding districts in provinces help? When is SQL better?
+// Task 7 · One-star reviews that have a written comment (`$exists: true`)
 // TODO
 
-// Homework 3: In `student_work`, build one province document with an array of its districts. Query `districts.district_pcode` and use `$size` or `$elemMatch`.
+// Task 8 · Orders with exactly 3 line items (`$size`)
+// TODO
+
+// Task 9 · Match two conditions on the *same* array element (`$elemMatch`)
+// TODO
+
+// Task 10 · Safe `updateOne()` practice (`$set` and `$addToSet`)
+// TODO
+
+// ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+// Task 11 · Exact subdocument equality returns `0` documents
+// TODO
+
+// Task 12 · `{ field: null }` matches missing parent objects too!
+// TODO
+
+// ===== Part 4: Optional Stretch (Tasks 13-15) =====
+// Task 13 · High-installment credit card payments (`$elemMatch`)
+// TODO
+
+// Task 14 · Interstate orders (`RJ` buyer, `SP` seller)
+// TODO
+
+// Task 15 · Combine `$set`, `$inc`, and `$unset` in one `updateOne()`
 // TODO

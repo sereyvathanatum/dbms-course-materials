@@ -1,30 +1,54 @@
--- Week 06: Subqueries and CTEs
--- Read from cambodia. Create and change tables only in student_work.
--- Save the output of each task in results/.
+-- WEEK-06 Practice Work (w06_olist)
+-- Import weeks/week-06/dataset.sql first, then write your queries below.
+-- Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-USE cambodia;  -- for your own tables, write student_work.table_name
+USE w06_olist;
 
--- ----- Lab -----
-
--- Lab 1: Find provinces above the average province area (scalar subquery).
+-- ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+-- Task 1 · Top 5 above-average priced items
 -- TODO
 
--- Lab 2: Find provinces with at least one district, first with IN, then with EXISTS. Compare.
+-- Task 2 · Highest freight charge
 -- TODO
 
--- Lab 3: Find districts larger than their own province's average district (correlated).
+-- Task 3 · Book products (`IN` subquery)
 -- TODO
 
--- Lab 4: With a CTE, count districts per province and keep counts above the average count.
+-- Task 4 · SP cities that have both customers and sellers
 -- TODO
 
--- Lab 5: Rewrite task 4 with a derived table and compare.
+-- Task 5 · Canceled orders with no line items (`NOT EXISTS`)
 -- TODO
 
--- ----- Homework -----
-
--- Homework 1: Answer one question with JOIN and with EXISTS. When does JOIN duplicate rows?
+-- ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+-- Task 6 · Count delivered orders with no review
 -- TODO
 
--- Homework 2: Review a classmate's schema: two suggestions.
+-- Task 7 · Count delivered orders with a 1-star review
+-- TODO
+
+-- Task 8 · Top 5 orders by total payment (`WITH` CTE)
+-- TODO
+
+-- Task 9 · Above-average sellers (`WITH` CTE + scalar subquery)
+-- TODO
+
+-- Task 10 · Orders using multiple payment types (`WITH` CTE)
+-- TODO
+
+-- ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+-- Task 11 · Uncorrelated `EXISTS` counts every order
+-- TODO
+
+-- Task 12 · The `NOT IN (NULL)` trap
+-- TODO
+
+-- ===== Part 4: Optional Stretch (Tasks 13-15) =====
+-- Task 13 · Products missing an English category translation
+-- TODO
+
+-- Task 14 · Average delivery time by state (CTE + `GROUP BY`)
+-- TODO
+
+-- Task 15 · Compare payment total vs item+freight total (two CTEs)
 -- TODO

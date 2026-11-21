@@ -1,31 +1,54 @@
--- Week 11: Connecting an application
--- Read from cambodia. Create and change tables only in student_work.
--- Put your app code in app/ and say here which file answers each task.
--- Save the output of each task in results/.
+-- WEEK-11 Practice Work (w11_movielens)
+-- Import weeks/week-11/dataset.sql first, then write your queries below.
+-- Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-USE cambodia;  -- for your own tables, write student_work.table_name
+USE w11_movielens;
 
--- ----- Lab -----
-
--- Lab 1: Run the report app (Python or Node.js) for one province; save command and output.
+-- ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+-- Task 1 · Parameterized movie detail page query
 -- TODO
 
--- Lab 2: Find where the parameter is bound. How does it stop injection? Why can't a column name be a parameter?
+-- Task 2 · Genres for a movie detail page
 -- TODO
 
--- Lab 3: Run the report with `' OR '1'='1`; check it returns no rows.
+-- Task 3 · Search bar prefix lookup
 -- TODO
 
--- Lab 4: In your app: create a table in `student_work`, insert rows from `cambodia`, select, update one, delete one, all with parameters.
+-- Task 4 · Offset pagination (Page 2 of 1995 movies)
 -- TODO
 
--- Lab 5: Handle a failed connection (wrong port) with a clear message and always close the connection. Optional: rank districts by area per province with `ROW_NUMBER()`.
+-- Task 5 · Keyset (“Load More”) pagination
 -- TODO
 
--- ----- Homework -----
-
--- Homework 1: Submit your app, setup steps and run output.
+-- ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+-- Task 6 · Movie counts per year (1995–1999)
 -- TODO
 
--- Homework 2: How do parameters, permissions and hidden passwords each protect the app?
+-- Task 7 · Top 5 most-active tagging users
+-- TODO
+
+-- Task 8 · Number a user’s recent ratings (`ROW_NUMBER()`)
+-- TODO
+
+-- Task 9 · Rank a user’s top ratings with ties (`RANK()`)
+-- TODO
+
+-- Task 10 · Show each rating beside the user’s personal average (`AVG() OVER ()`)
+-- TODO
+
+-- ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+-- Task 11 · String concatenation breaks on apostrophes and allows SQL injection
+-- TODO
+
+-- Task 12 · Filtering a window function directly inside `WHERE`
+-- TODO
+
+-- ===== Part 4: Optional Stretch (Tasks 13-15) =====
+-- Task 13 · See the difference between `RANK()` and `DENSE_RANK()`
+-- TODO
+
+-- Task 14 · Top 3 highest-rated Action and Comedy movies (`PARTITION BY`)
+-- TODO
+
+-- Task 15 · Compare each rating with the previous rating (`LAG()`)
 -- TODO

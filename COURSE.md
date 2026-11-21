@@ -24,7 +24,7 @@ Capstone: sprints 10%, Checkpoint 1 5%, Checkpoint 2 10%, Checkpoint 3 10%, fina
 
 ## Rules
 
-- Read `cambodia`; change only `student_work`.
+- Keep each week’s imported dataset (`w01_cambodia` through `w13_f1`) clean; create and modify your own tables, views, procedures, and triggers in `student_work`.
+- Aim to complete **Core Practice (Tasks 1–12)** each week; **Optional Stretch (Tasks 13–15)** is extra practice if you finish early.
 - Copy results from your own output. Don't make them up.
 - No passwords or personal data in your repository.
-- Slides may use other datasets; practise the same skills on this data.

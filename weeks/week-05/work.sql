@@ -1,30 +1,54 @@
--- Week 05: Joining related tables
--- Read from cambodia. Create and change tables only in student_work.
--- Save the output of each task in results/.
+-- WEEK-05 Practice Work (w05_chinook)
+-- Import weeks/week-05/dataset.sql first, then write your queries below.
+-- Core Practice: Tasks 1-12 | Optional Stretch: Tasks 13-15
 
-USE cambodia;  -- for your own tables, write student_work.table_name
+USE w05_chinook;
 
--- ----- Lab -----
-
--- Lab 1: Show each district with its province name.
+-- ===== Part 1: Basics (Tasks 1-5) — Core Practice =====
+-- Task 1 · First 10 albums with artist name
 -- TODO
 
--- Lab 2: Join communes → districts → provinces, sorted by commune code.
+-- Task 2 · First 10 tracks with media type
 -- TODO
 
--- Lab 3: LEFT JOIN provinces to districts and count districts per province.
+-- Task 3 · First 10 invoices with customer name
 -- TODO
 
--- Lab 4: Find districts with no province (LEFT JOIN + IS NULL). Report the result, even if empty.
+-- Task 4 · First 10 tracks with genre name
 -- TODO
 
--- Lab 5: Self join provinces to find equal areas; if none, explain how the query would show them. Compare UNION vs UNION ALL on the same SELECT.
+-- Task 5 · First 8 tracks in Playlist 1 (3-table join)
 -- TODO
 
--- ----- Homework -----
-
--- Homework 1: Join all three tables and say what one result row represents.
+-- ===== Part 2: Everyday Practice (Tasks 6-10) — Core Practice =====
+-- Task 6 · Artists with no albums (`LEFT JOIN ... IS NULL`)
 -- TODO
 
--- Homework 2: Show how joining communes changes a district count; fix it with COUNT(DISTINCT district_pcode).
+-- Task 7 · Track count for every playlist (keep empty playlists)
+-- TODO
+
+-- Task 8 · Employees and their managers (self-join)
+-- TODO
+
+-- Task 9 · Tracks per genre
+-- TODO
+
+-- Task 10 · Unique country list (`UNION`)
+-- TODO
+
+-- ===== Part 3: Fix the Bug (Tasks 11-12) — Core Practice =====
+-- Task 11 · `COUNT(*)` turns empty `LEFT JOIN` rows into `1`
+-- TODO
+
+-- Task 12 · `WHERE` filter cancels a `LEFT JOIN`
+-- TODO
+
+-- ===== Part 4: Optional Stretch (Tasks 13-15) =====
+-- Task 13 · Top 5 artists by units sold (4-table join)
+-- TODO
+
+-- Task 14 · Support rep customer count and revenue
+-- TODO
+
+-- Task 15 · First 10 tracks never sold
 -- TODO
